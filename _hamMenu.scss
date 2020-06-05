@@ -1,0 +1,71 @@
+.ham-button {
+    display: block;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 9999;
+    margin:30px;
+
+    :nth-child(1),
+    :nth-child(2),
+    :nth-child(3) {
+        display: block;
+        position: absolute;
+        height: 4px;
+        background-color: $CTA-color;
+        right:0;
+        transform-origin: center;
+        transform-origin: center;
+        transition: all 300ms ease-in-out;
+    }
+    :nth-child(1) {
+        width: 24px;
+        top:0;
+    }
+    :nth-child(2) {
+        width: 30px;
+        top:50%;
+        transform: translateY(-50%);
+    }
+    :nth-child(3) {
+        width: 15px;
+        bottom: 0;
+    }
+}
+.ham-button.active {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    > :nth-child(1) {
+        width: 30px;
+        top:50%;
+        background-color: $txt-cta-bg;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    > :nth-child(2) {
+        opacity:0;
+        background-color: $txt-cta-bg;
+    }
+
+    > :nth-child(3) {
+        width: 30px;
+        top:50%;
+        background-color: $txt-cta-bg;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+}
+
+
+
+.ham-button:hover > :nth-child(1),
+.ham-button:hover > :nth-child(2),
+.ham-button:hover > :nth-child(3),
+.ham-button:focus > :nth-child(1),
+.ham-button:focus > :nth-child(2),
+.ham-button:focus > :nth-child(3) {
+    width: 30px;
+}
+
+
