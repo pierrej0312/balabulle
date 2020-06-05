@@ -178,6 +178,7 @@ header .menu-nav .ham-button {
   position: relative;
   z-index: 9999;
   margin: 30px;
+  margin-right: 50px;
 }
 
 header .menu-nav .ham-button :nth-child(1),
