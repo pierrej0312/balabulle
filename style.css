@@ -112,6 +112,160 @@ main {
 
 .main-descr {
   height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-descr .header {
+  height: 30vh;
+  width: calc(100vw - 20vw);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+.main-descr .header .header-title {
+  font-family: Thinking_of_Betty;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  font-size: 2.8rem;
+  line-height: 180%;
+  margin-left: 50px;
+}
+
+.main-descr .header .header-title strong {
+  font-family: Thinking_of_Betty;
+  font-weight: 500;
+  font-size: 4rem;
+  margin-left: -50px;
+}
+
+.main-descr .header .header-txt {
+  font-weight: 400;
+  line-height: 150%;
+  margin-top: 30px;
+}
+
+.main-descr .header .CTA {
+  padding: 10px 50px;
+  border-radius: 50px;
+  color: #336099;
+  background-color: #FDC055;
+  margin-bottom: 50px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 900px) {
+  .main-descr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .main-descr .header {
+    height: 100vh;
+    width: 30vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-left: 10vw;
+  }
+  .main-descr .header .header-title {
+    font-family: Thinking_of_Betty;
+    font-weight: 500;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    font-size: 3.5rem;
+    line-height: 180%;
+    margin-left: 50px;
+  }
+  .main-descr .header .header-title strong {
+    font-family: Thinking_of_Betty;
+    font-weight: 500;
+    font-size: 4.5rem;
+    margin-left: -50px;
+  }
+  .main-descr::after {
+    content: '';
+    display: block;
+    width: 50vw;
+    height: 100vh;
+    background: url(/img/cup-render.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+  }
+}
+
+section {
+  color: white;
 }
 
 header {

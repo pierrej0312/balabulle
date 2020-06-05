@@ -1,3 +1,55 @@
 .main-descr {
     height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .header {
+        height: 30vh;
+        width: calc(100vw - 20vw);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-left: 10vw;
+        margin-right: 10vw;
+    
+    .header-title {
+        font-family: Thinking_of_Betty;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: 2.8rem;
+        line-height: 180%;
+        margin-left: 50px;
+
+        strong {
+            font-family: Thinking_of_Betty;
+            font-weight: 500;
+            font-size: 4rem;
+            margin-left: -50px;
+            
+        }
+    }
+    .header-txt {
+        font-weight: 400;
+        line-height: 150%;
+        margin-top: 30px;
+    }
+    .CTA {
+        padding: 10px 50px;
+        border-radius: 50px;
+        color: $txt-cta-bg;
+        background-color: $CTA-color;
+        margin-bottom: 50px;
+        font-weight: 600;
+        margin-top: 30px;
+    }
+}
+}
+@media screen and (min-width: 900px) {
+    @import 'firstSectionDesktop';
 }
