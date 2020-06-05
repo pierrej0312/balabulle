@@ -106,6 +106,10 @@ figure {
   padding: 0;
 }
 
+main {
+  background: radial-gradient(160.45% 57.32% at -24.34% 14.24%, #336099 0%, #50B0A2 100%);
+}
+
 /*body {
     font-family: Thinking_of_Betty;
     font-weight: 500;
