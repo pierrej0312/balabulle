@@ -490,7 +490,7 @@ header .menu-nav .main-nav.active {
   left: 0;
 }
 
-@media screen and (min-wiidth: 900px) {
+@media screen and (min-width: 900px) {
   header .menu-nav .main-nav {
     left: 0vw;
     width: 0;
