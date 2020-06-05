@@ -19,7 +19,7 @@
         </a>
 
         <!--Hamburger-->
-        <div class="ham-button">
+        <div class="ham-button" aria-hidden="true">
             <span></span>
             <span></span>
             <span></span>
@@ -83,7 +83,7 @@
         <p>Des déchets de gobelets jetables ? Des verres cassés par les clients pendant vos festivités ?</p>
         <p>Adoptez le gobelet BALABULLE aux matériaux durables et recyclables. Le gobelet BALABULLE émet 0 déchet qu’il soit utilisé ou cassé grâce au service nettoyage et recyclage.</p>
     </div>
-    <div class="panelContentIllustration" ariahidden="true"></div>
+    <div class="panelContentIllustration" aria-hidden="true"></div>
 </section>
 <section class="panelContent">
     <div class="productExplain">
@@ -92,7 +92,7 @@
         </h2>
         <p>Démarquez-vous lors de votre événement avec un gobelet qui a du style.</p>
     </div>
-    <div class="panelContentIllustration" ariahidden="true"></div>
+    <div class="panelContentIllustration" aria-hidden="true"></div>
 </section>
 <section class="panelContent">
     <div class="productExplain">
@@ -112,27 +112,72 @@
 </section>
 <footer>
     <section class="newsletter">
-        <h2>Toujours informé</h2>
-        <h3>Toutes les news sur les gobelets et services par mail</h3>
-        <form method="get" class="search-form">
-            <label for="search">Entrez votre recherche</label>
+        
+        <form method="get" class="newsletter-form">
+            <label for="email"><h2>Toujours informé</h2>
+        <h3>Toutes les news sur les gobelets et services par mail</h3></label>
             <input
-                type="search"
-                id="search"
-                name="q"
-                aria-label="rechercher"
-                placeholder="Entrez votre recherche"
-                class="search-text"
+                type="email"
+                id="email"
+                placeholder="monemail@mail.com"
+                class="newsletter-input"
             />
-            <button class="submit-search">rechercher</button>
+            <button class="submit-email">S'inscrire</button>
         </form>
     </section>
     <section class="socialmedia"></section>
     <section class="countryandnav">
-        <div class="country"></div>
-        <div class="secondnav"></div>
+        <div class="country">
+            <select name="" id="">
+                <option value="BE">Belgique</option>
+                <option value="NL">Netherland</option>
+                <option value="LU">Luxembourg</option>
+                <option value="FR">France</option>
+                <option value="DE">Allemagne</option>
+                <option value="GB">United Kingdom</option>
+                <option value="US">United States</option>
+                <option value="INT">International</option>
+            </select>
+        </div>
+        <nav class="secondnav">
+            <ul class="secondary-nav-list">
+                <li class="nav-link">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav-link">
+                    <a href="contact.html">Pourquoi ?</a>
+                </li>
+                <li class="nav-link">
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li class="nav-link CTA">
+                    <a href="">Devis</a>
+                </li>
+                <li class="nav-link">
+                    <a href="">FAQ</a>
+                </li>
+            </ul>
+        </nav>
     </section>
-    <section class="footermenu"></section>
+    <nav class="footermenu">
+        <ul class="footer-nav-list">
+            <li class="nav-link">
+                <a href="index.html">@balabulle - 2020 by Wallcom & pjdesign</a>
+            </li>
+            <li class="nav-link">
+                <a href="contact.html">Conditions Générales de Vente</a>
+            </li>
+            <li class="nav-link">
+                <a href="contact.html">Conditions Générales de Location</a>
+            </li>
+            <li class="nav-link CTA">
+                <a href="">Nos partenaires</a>
+            </li>
+            <li class="nav-link">
+                <a href="">Informations légales</a>
+            </li>
+        </ul>
+    </nav>
 </footer>
 </body>
 </html>
