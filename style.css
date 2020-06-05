@@ -248,6 +248,62 @@ header .menu-nav .ham-button:focus > :nth-child(3) {
   width: 30px;
 }
 
+header .menu-nav .main-nav {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  z-index: 8000;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+header .menu-nav .main-nav .main-nav-list {
+  margin: 0;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+header .menu-nav .main-nav .main-nav-list .nav-link {
+  margin: 0;
+  padding: 0;
+  margin-top: 20px;
+}
+
+header .menu-nav .main-nav .main-nav-list .nav-link a {
+  font-size: 24px;
+  color: #336099;
+}
+
+header .menu-nav .main-nav.active {
+  left: 0;
+}
+
 /*body {
     font-family: Thinking_of_Betty;
     font-weight: 500;
