@@ -1,0 +1,107 @@
+.main-nav {
+    left:0vw;
+    width:0;
+    height:100px;
+    background: none;
+    display: block;
+
+    .main-nav-list {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 50px;
+
+        .search {
+            width: 30px;
+            order: 1;
+            padding:0;
+            display:block;
+            transition: all 300ms ease-in-out;
+
+            .search-button::before {
+                color: $txt-pink-color;
+                font-size: 18px;
+                transition: all 300ms ease-in-out;
+            }
+            .search-button:hover::before {
+                color:white;
+                font-size: 20px;
+            }
+
+            .search-form {
+                width: 200px;
+
+                .submit-search {
+                    top:0;
+                    right: -100px;
+                }
+
+                .close-search::before,
+                .close-search::after {
+                    background: white;
+                }
+            }
+            input {
+                width: 200px;
+                color: white;
+            }
+        }
+        .search.active {
+            width: 300px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom:5px;
+
+            .search-button::before {
+                color:white;
+            }
+        }
+        .search.active ~ .nav-link {
+            display:none;
+        }
+        .search.active::after {
+            display:none;
+        }
+        @keyframes anim-search-form {
+            100% {
+                width:200px;
+                height: 0px;
+                left: 40px;
+                top: 80%;
+            }
+        }
+
+        .nav-link {
+            margin-top:0;
+            margin-right: 30px;
+            position: relative;
+            a {
+                font-weight: 500;
+                font-size:18px;
+                color: $txt-pink-color;
+                transition: all 300ms ease-in-out;
+            }
+        }
+        .nav-link:hover {
+            a {
+                font-size:21px;
+                color:white;
+            }
+        }
+        .nav-link::after {
+            content:'';
+            display:block;
+            position: absolute;
+            width:1px;
+            height: 100%;
+            background: $txt-pink-color;
+            top:0;
+            right:-15px;
+        }
+        .nav-link:last-child::after {
+            display:none;
+        }
+    }
+}

@@ -192,11 +192,13 @@ main {
   margin-top: 30px;
 }
 
-.main-descr::after {
+.main-descr::before {
   content: '';
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 50px;
+  margin-top: -100px;
   background: url(/img/cup-render.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -212,9 +214,9 @@ main {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -236,6 +238,7 @@ main {
         -ms-flex-align: start;
             align-items: flex-start;
     margin-left: 10vw;
+    margin-right: 0;
   }
   .main-descr .header .header-title {
     font-family: Thinking_of_Betty;
@@ -266,12 +269,15 @@ main {
   .main-descr::after {
     content: '';
     display: block;
-    width: 300px;
-    height: 300px;
+    width: 45vw;
+    height: 70vh;
     background: url(/img/cup-render.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
+  }
+  .main-descr::before {
+    display: none;
   }
 }
 
@@ -280,7 +286,7 @@ section {
 }
 
 header {
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100px;
   padding: 0;
@@ -315,7 +321,13 @@ header .menu-nav .main-logo {
   height: 100px;
   overflow: hidden;
   position: relative;
-  margin: 0px;
+  margin-left: 0px;
+}
+
+@media screen and (min-width: 900px) {
+  header .menu-nav .main-logo {
+    margin-left: 30px;
+  }
 }
 
 header .menu-nav .main-logo h1 {
@@ -340,10 +352,18 @@ header .menu-nav .ham-button {
   display: block;
   width: 30px;
   height: 25px;
-  position: relative;
+  position: fixed;
   z-index: 9999;
   margin: 30px;
   margin-right: 50px;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (min-width: 900px) {
+  header .menu-nav .ham-button {
+    display: none;
+  }
 }
 
 header .menu-nav .ham-button :nth-child(1),
@@ -468,6 +488,135 @@ header .menu-nav .main-nav .main-nav-list .nav-link a {
 
 header .menu-nav .main-nav.active {
   left: 0;
+}
+
+@media screen and (min-wiidth: 900px) {
+  header .menu-nav .main-nav {
+    left: 0vw;
+    width: 0;
+    height: 100px;
+    background: none;
+    display: block;
+  }
+  header .menu-nav .main-nav .main-nav-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-right: 50px;
+  }
+  header .menu-nav .main-nav .main-nav-list .search {
+    width: 30px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    padding: 0;
+    display: block;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+  header .menu-nav .main-nav .main-nav-list .search .search-button::before {
+    color: #F297B1;
+    font-size: 18px;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+  header .menu-nav .main-nav .main-nav-list .search .search-button:hover::before {
+    color: white;
+    font-size: 20px;
+  }
+  header .menu-nav .main-nav .main-nav-list .search .search-form {
+    width: 200px;
+  }
+  header .menu-nav .main-nav .main-nav-list .search .search-form .submit-search {
+    top: 0;
+    right: -100px;
+  }
+  header .menu-nav .main-nav .main-nav-list .search .search-form .close-search::before,
+  header .menu-nav .main-nav .main-nav-list .search .search-form .close-search::after {
+    background: white;
+  }
+  header .menu-nav .main-nav .main-nav-list .search input {
+    width: 200px;
+    color: white;
+  }
+  header .menu-nav .main-nav .main-nav-list .search.active {
+    width: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-bottom: 5px;
+  }
+  header .menu-nav .main-nav .main-nav-list .search.active .search-button::before {
+    color: white;
+  }
+  header .menu-nav .main-nav .main-nav-list .search.active ~ .nav-link {
+    display: none;
+  }
+  header .menu-nav .main-nav .main-nav-list .search.active::after {
+    display: none;
+  }
+  @-webkit-keyframes anim-search-form {
+    100% {
+      width: 200px;
+      height: 0px;
+      left: 40px;
+      top: 80%;
+    }
+  }
+  @keyframes anim-search-form {
+    100% {
+      width: 200px;
+      height: 0px;
+      left: 40px;
+      top: 80%;
+    }
+  }
+  header .menu-nav .main-nav .main-nav-list .nav-link {
+    margin-top: 0;
+    margin-right: 30px;
+    position: relative;
+  }
+  header .menu-nav .main-nav .main-nav-list .nav-link a {
+    font-weight: 500;
+    font-size: 18px;
+    color: #F297B1;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+  }
+  header .menu-nav .main-nav .main-nav-list .nav-link:hover a {
+    font-size: 21px;
+    color: white;
+  }
+  header .menu-nav .main-nav .main-nav-list .nav-link::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: #F297B1;
+    top: 0;
+    right: -15px;
+  }
+  header .menu-nav .main-nav .main-nav-list .nav-link:last-child::after {
+    display: none;
+  }
 }
 
 /*body {

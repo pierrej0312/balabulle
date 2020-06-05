@@ -2,10 +2,15 @@
     display: block;
     width: 30px;
     height: 25px;
-    position: relative;
+    position: fixed;
     z-index: 9999;
     margin:30px;
     margin-right: 50px;
+    top:0;
+    right:0;
+    @media screen and (min-width:900px) {
+        display:none;
+    }
 
     :nth-child(1),
     :nth-child(2),

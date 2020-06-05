@@ -1,7 +1,7 @@
 .main-descr {
  display: flex;
  flex-direction: row;
- justify-content: center;
+ justify-content: flex-start;
  align-items: center;
     .header {
     height: 100vh;
@@ -11,6 +11,7 @@
         justify-content: center;
         align-items: flex-start;
         margin-left: 10vw;
+        margin-right: 0;
     
         .header-title {
             font-family: Thinking_of_Betty;
@@ -35,11 +36,14 @@
     &::after {
         content:'';
         display: block;
-        width:300px;
-        height:300px;
+        width:45vw;
+        height:70vh;
         background: url(/img/cup-render.png);
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         background-position: center;
+    }
+    &::before {
+        display:none;
     }
 }

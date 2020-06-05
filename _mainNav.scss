@@ -36,3 +36,6 @@
 .main-nav.active {
     left:0;
 }
+@media screen and (min-wiidth:900px) {
+    @import 'mainNavDesktop';
+}
