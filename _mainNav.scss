@@ -1,15 +1,15 @@
 .main-nav {
     position:fixed;
-    top:0;
-    left:-100vw;
+    top:-100vh;
+    left:0vw;
     padding:0;
     margin:0;
     width: 100vw;
     height: 100vh;
     background: $txt-basic-clr;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
     z-index: 8000;
     transition: all 300ms ease-in-out;
 
@@ -18,23 +18,32 @@
         padding: 50px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-end;
+        justify-content: center;
+        align-items: center;
 
         .nav-link {
             margin:0;
             padding:0;
-            margin-top: 20px;
+            margin-top: 40px;
 
             a {
                 font-size: 24px;
                 color: $txt-cta-bg;
             }
         }
+        .CTA {
+            padding:10px 30px;
+            border-radius: 50px;
+            color: $txt-cta-bg;
+            background-color: $CTA-color;
+            a{
+                color: $txt-cta-bg;
+            }
+        }
     }
 }
 .main-nav.active {
-    left:0;
+    top:0;
 }
 @media screen and (min-width:900px) {
     @import 'mainNavDesktop';

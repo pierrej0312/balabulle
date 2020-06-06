@@ -106,6 +106,10 @@ figure {
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 main {
   background: radial-gradient(160.45% 57.32% at -24.34% 14.24%, #336099 0%, #50B0A2 100%);
 }
@@ -239,6 +243,7 @@ main {
             align-items: flex-start;
     margin-left: 10vw;
     margin-right: 0;
+    margin-top: 100px;
   }
   .main-descr .header .header-title {
     font-family: Thinking_of_Betty;
@@ -279,6 +284,58 @@ main {
   .main-descr::before {
     display: none;
   }
+}
+
+.more {
+  position: absolute;
+  top: 90vh;
+  left: 50vw;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #FDC055;
+}
+
+.more .look-bottom {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.more .look-bottom :first-child,
+.more .look-bottom :last-child {
+  display: block;
+  position: absolute;
+  width: 23px;
+  height: 3px;
+  border-radius: 70px;
+  background: #FDC055;
+}
+
+.more .look-bottom :first-child {
+  bottom: 60%;
+  left: 6px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.more .look-bottom :last-child {
+  bottom: 60%;
+  right: 6px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 section {
@@ -355,7 +412,7 @@ header .menu-nav .ham-button {
   position: fixed;
   z-index: 9999;
   margin: 30px;
-  margin-right: 50px;
+  margin-right: 30px;
   top: 0;
   right: 0;
 }
@@ -436,8 +493,8 @@ header .menu-nav .ham-button:focus > :nth-child(3) {
 
 header .menu-nav .main-nav {
   position: fixed;
-  top: 0;
-  left: -100vw;
+  top: -100vh;
+  left: 0vw;
   padding: 0;
   margin: 0;
   width: 100vw;
@@ -446,12 +503,12 @@ header .menu-nav .main-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   z-index: 8000;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -467,18 +524,18 @@ header .menu-nav .main-nav .main-nav-list {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header .menu-nav .main-nav .main-nav-list .nav-link {
   margin: 0;
   padding: 0;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 header .menu-nav .main-nav .main-nav-list .nav-link a {
@@ -486,15 +543,27 @@ header .menu-nav .main-nav .main-nav-list .nav-link a {
   color: #336099;
 }
 
+header .menu-nav .main-nav .main-nav-list .CTA {
+  padding: 10px 30px;
+  border-radius: 50px;
+  color: #336099;
+  background-color: #FDC055;
+}
+
+header .menu-nav .main-nav .main-nav-list .CTA a {
+  color: #336099;
+}
+
 header .menu-nav .main-nav.active {
-  left: 0;
+  top: 0;
 }
 
 @media screen and (min-width: 900px) {
   header .menu-nav .main-nav {
     left: 0vw;
-    width: 0;
-    height: 100px;
+    top: 0;
+    width: 100vw;
+    height: 80px;
     background: none;
     display: block;
   }
@@ -510,112 +579,32 @@ header .menu-nav .main-nav.active {
         -ms-flex-align: center;
             align-items: center;
     padding-right: 50px;
-  }
-  header .menu-nav .main-nav .main-nav-list .search {
-    width: 30px;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-    padding: 0;
-    display: block;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
-  }
-  header .menu-nav .main-nav .main-nav-list .search .search-button::before {
-    color: #F297B1;
-    font-size: 18px;
-    -webkit-transition: all 300ms ease-in-out;
-    transition: all 300ms ease-in-out;
-  }
-  header .menu-nav .main-nav .main-nav-list .search .search-button:hover::before {
-    color: white;
-    font-size: 20px;
-  }
-  header .menu-nav .main-nav .main-nav-list .search .search-form {
-    width: 200px;
-  }
-  header .menu-nav .main-nav .main-nav-list .search .search-form .submit-search {
-    top: 0;
-    right: -100px;
-  }
-  header .menu-nav .main-nav .main-nav-list .search .search-form .close-search::before,
-  header .menu-nav .main-nav .main-nav-list .search .search-form .close-search::after {
-    background: white;
-  }
-  header .menu-nav .main-nav .main-nav-list .search input {
-    width: 200px;
-    color: white;
-  }
-  header .menu-nav .main-nav .main-nav-list .search.active {
-    width: 300px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    padding-bottom: 5px;
-  }
-  header .menu-nav .main-nav .main-nav-list .search.active .search-button::before {
-    color: white;
-  }
-  header .menu-nav .main-nav .main-nav-list .search.active ~ .nav-link {
-    display: none;
-  }
-  header .menu-nav .main-nav .main-nav-list .search.active::after {
-    display: none;
-  }
-  @-webkit-keyframes anim-search-form {
-    100% {
-      width: 200px;
-      height: 0px;
-      left: 40px;
-      top: 80%;
-    }
-  }
-  @keyframes anim-search-form {
-    100% {
-      width: 200px;
-      height: 0px;
-      left: 40px;
-      top: 80%;
-    }
+    padding-top: 30px;
   }
   header .menu-nav .main-nav .main-nav-list .nav-link {
     margin-top: 0;
-    margin-right: 30px;
+    margin-right: 50px;
     position: relative;
   }
   header .menu-nav .main-nav .main-nav-list .nav-link a {
     font-weight: 500;
     font-size: 18px;
-    color: #F297B1;
+    color: white;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
   }
+  header .menu-nav .main-nav .main-nav-list .CTA a {
+    color: #336099;
+  }
   header .menu-nav .main-nav .main-nav-list .nav-link:hover a {
     font-size: 21px;
-    color: white;
+    color: #FDC055;
   }
-  header .menu-nav .main-nav .main-nav-list .nav-link::after {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 1px;
-    height: 100%;
-    background: #F297B1;
-    top: 0;
-    right: -15px;
+  header .menu-nav .main-nav .main-nav-list .CTA:hover {
+    background-color: white;
   }
-  header .menu-nav .main-nav .main-nav-list .nav-link:last-child::after {
-    display: none;
+  header .menu-nav .main-nav .main-nav-list .CTA:hover a {
+    color: #336099;
   }
 }
 
