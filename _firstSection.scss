@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
     @media screen and (max-height: 570px) {
         justify-content: flex-end;
         height: 80vh;
@@ -19,6 +20,7 @@
         align-items: flex-start;
         margin-left: 10vw;
         margin-right: 10vw;
+        z-index: 999;
     
     .header-title {
         font-family: Thinking_of_Betty;
@@ -68,10 +70,14 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    z-index: 999;
 }
 @media screen and (max-height: 570px) {
     &::before {
         display: none;
+    }
+    .more {
+        top:98vh;
     }
 }
 }
@@ -88,6 +94,13 @@
     justify-content: center;
     align-items: center;
     color:$CTA-color;
+    z-index: 999;
+    @media screen and (max-width: 900px) {
+        top:93vh;
+        :first-child {
+            display: none;
+        }
+    }
     .look-bottom {
         position: relative;
         width:50px;

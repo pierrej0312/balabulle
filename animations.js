@@ -11,3 +11,14 @@ let search = document.querySelector(".search");
 let closeSearch = document.querySelector(".close-search");
 let searchForm = document.querySelector(".search-form");
 let more = document.querySelector(".more");
+
+//scroll nav bar
+
+window.addEventListener("scroll", ()=> {
+    if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.querySelector("header").classList.remove("start");
+      } 
+    else {
+        document.querySelector("header").classList.add("start");
+    }
+});

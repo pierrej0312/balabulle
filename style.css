@@ -111,10 +111,17 @@ html {
 }
 
 main {
-  background: radial-gradient(160.45% 57.32% at -24.34% 14.24%, #336099 0%, #50B0A2 100%);
+  background: url(/img/normal-ball.png), url(/img/big-ball.png), url(/img/small-ball.png), url(/img/tiny-ball.png), url(/img/normal-ball.png), url(/img/big-ball.png), radial-gradient(160.45% 57.32% at -24.34% 14.24%, #336099 0%, #50B0A2 100%);
+  background-position-x: 60px, 5px, 1100px, 1200px, 1800px,2200px, 0;
+  background-position-y: 50px,80vh, 30px, 70vh, 70vh,-10vh, 0;
+  background-size: 206px, 439px, 182px, 116px, 200px,300px, cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
 }
 
-.main-descr {
+main .main-descr {
   height: 100vh;
   width: 100vw;
   display: -webkit-box;
@@ -133,7 +140,7 @@ main {
 }
 
 @media screen and (max-height: 570px) {
-  .main-descr {
+  main .main-descr {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
@@ -142,7 +149,7 @@ main {
   }
 }
 
-.main-descr .header {
+main .main-descr .header {
   height: 30vh;
   width: calc(100vw - 20vw);
   display: -webkit-box;
@@ -160,9 +167,10 @@ main {
           align-items: flex-start;
   margin-left: 10vw;
   margin-right: 10vw;
+  z-index: 999;
 }
 
-.main-descr .header .header-title {
+main .main-descr .header .header-title {
   font-family: Thinking_of_Betty;
   font-weight: 500;
   display: -webkit-box;
@@ -184,25 +192,25 @@ main {
 }
 
 @media screen and (max-height: 570px) {
-  .main-descr .header .header-title {
+  main .main-descr .header .header-title {
     margin-bottom: 20px;
   }
 }
 
-.main-descr .header .header-title strong {
+main .main-descr .header .header-title strong {
   font-family: Thinking_of_Betty;
   font-weight: 500;
   font-size: 2.5rem;
   margin-left: -50px;
 }
 
-.main-descr .header .header-txt {
+main .main-descr .header .header-txt {
   font-weight: 400;
   line-height: 150%;
   margin-top: 30px;
 }
 
-.main-descr .header .CTA {
+main .main-descr .header .CTA {
   padding: 10px 50px;
   border-radius: 50px;
   color: #336099;
@@ -212,7 +220,7 @@ main {
   margin-top: 30px;
 }
 
-.main-descr::before {
+main .main-descr::before {
   content: '';
   display: block;
   width: 300px;
@@ -223,16 +231,20 @@ main {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  z-index: 999;
 }
 
 @media screen and (max-height: 570px) {
-  .main-descr::before {
+  main .main-descr::before {
     display: none;
+  }
+  main .main-descr .more {
+    top: 98vh;
   }
 }
 
 @media screen and (min-width: 900px) {
-  .main-descr {
+  main .main-descr {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -247,9 +259,9 @@ main {
         -ms-flex-align: center;
             align-items: center;
   }
-  .main-descr .header {
+  main .main-descr .header {
     height: 100vh;
-    width: 30vw;
+    width: 500px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -267,7 +279,7 @@ main {
     margin-right: 0;
     margin-top: 100px;
   }
-  .main-descr .header .header-title {
+  main .main-descr .header .header-title {
     font-family: Thinking_of_Betty;
     font-weight: 500;
     display: -webkit-box;
@@ -287,13 +299,13 @@ main {
     line-height: 180%;
     margin-left: 50px;
   }
-  .main-descr .header .header-title strong {
+  main .main-descr .header .header-title strong {
     font-family: Thinking_of_Betty;
     font-weight: 500;
     font-size: 4.5rem;
     margin-left: -50px;
   }
-  .main-descr::after {
+  main .main-descr::after {
     content: '';
     display: block;
     width: 45vw;
@@ -302,13 +314,14 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    z-index: 999;
   }
-  .main-descr::before {
+  main .main-descr::before {
     display: none;
   }
 }
 
-.more {
+main .more {
   position: absolute;
   top: 90vh;
   left: 50vw;
@@ -328,16 +341,26 @@ main {
       -ms-flex-align: center;
           align-items: center;
   color: #FDC055;
+  z-index: 999;
 }
 
-.more .look-bottom {
+@media screen and (max-width: 900px) {
+  main .more {
+    top: 93vh;
+  }
+  main .more :first-child {
+    display: none;
+  }
+}
+
+main .more .look-bottom {
   position: relative;
   width: 50px;
   height: 50px;
 }
 
-.more .look-bottom :first-child,
-.more .look-bottom :last-child {
+main .more .look-bottom :first-child,
+main .more .look-bottom :last-child {
   display: block;
   position: absolute;
   width: 23px;
@@ -346,22 +369,23 @@ main {
   background: #FDC055;
 }
 
-.more .look-bottom :first-child {
+main .more .look-bottom :first-child {
   bottom: 60%;
   left: 6px;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.more .look-bottom :last-child {
+main .more .look-bottom :last-child {
   bottom: 60%;
   right: 6px;
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
 
-section {
+main section {
   color: white;
+  z-index: 999999;
 }
 
 header {
@@ -372,6 +396,16 @@ header {
   margin: 0;
   top: 0;
   left: 0;
+}
+
+@media screen and (min-width: 900px) {
+  header {
+    position: fixed;
+    background: whitesmoke;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    z-index: 99999;
+  }
 }
 
 header .menu-nav {
@@ -406,6 +440,7 @@ header .menu-nav .main-logo {
 @media screen and (min-width: 900px) {
   header .menu-nav .main-logo {
     margin-left: 30px;
+    z-index: 999999999;
   }
 }
 
@@ -611,7 +646,7 @@ header .menu-nav .main-nav.active {
   header .menu-nav .main-nav .main-nav-list .nav-link a {
     font-weight: 500;
     font-size: 18px;
-    color: white;
+    color: #336099;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
   }
@@ -623,9 +658,27 @@ header .menu-nav .main-nav.active {
     color: #FDC055;
   }
   header .menu-nav .main-nav .main-nav-list .CTA:hover {
-    background-color: white;
+    background-color: #336099;
   }
   header .menu-nav .main-nav .main-nav-list .CTA:hover a {
+    color: #FDC055;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  header.start {
+    background: rgba(250, 250, 250, 0);
+  }
+  header.start .main-nav .main-nav-list .nav-link a {
+    color: white;
+  }
+  header.start .main-nav .main-nav-list .CTA a {
+    color: #336099;
+  }
+  header.start .main-nav .main-nav-list .CTA:hover {
+    background-color: white;
+  }
+  header.start .main-nav .main-nav-list .CTA:hover a {
     color: #336099;
   }
 }

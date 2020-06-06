@@ -1,7 +1,16 @@
 main {
-    background: radial-gradient(160.45% 57.32% at -24.34% 14.24%, #336099 0%, #50B0A2 100%);
-}
-@import 'firstSection';
-section {
-    color:$txt-basic-clr;
+    background: url(/img/normal-ball.png), url(/img/big-ball.png), url(/img/small-ball.png), url(/img/tiny-ball.png),url(/img/normal-ball.png), url(/img/big-ball.png), radial-gradient(160.45% 57.32% at -24.34% 14.24%, #336099 0%, #50B0A2 100%);
+    background-position-x: 60px, 5px, 1100px, 1200px, 1800px,2200px, 0;
+    background-position-y: 50px,80vh, 30px, 70vh, 70vh,-10vh, 0;
+    background-size: 206px, 439px, 182px, 116px, 200px,300px, cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    
+    @import 'firstSection';
+    section {
+        color:$txt-basic-clr;
+        z-index: 999999;
+    }
 }
