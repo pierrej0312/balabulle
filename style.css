@@ -183,6 +183,12 @@ main {
   margin-left: 50px;
 }
 
+@media screen and (max-height: 570px) {
+  .main-descr .header .header-title {
+    margin-bottom: 20px;
+  }
+}
+
 .main-descr .header .header-title strong {
   font-family: Thinking_of_Betty;
   font-weight: 500;

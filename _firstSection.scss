@@ -30,6 +30,9 @@
         font-size: 2rem;
         line-height: 180%;
         margin-left: 50px;
+        @media screen and (max-height: 570px) {
+            margin-bottom: 20px;
+        }
 
         strong {
             font-family: Thinking_of_Betty;
