@@ -7,10 +7,16 @@ main {
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
+    animation-name: animated-bubbles;
+                animation-iteration-count: infinite;
+                animation-fill-mode: forwards;
+                animation-duration: 15s;
+                animation-delay: 2s;
+                animation-timing-function: ease-in-out;
     
     @import 'firstSection';
     section {
         color:$txt-basic-clr;
-        z-index: 999999;
+        z-index: 9999;
     }
 }

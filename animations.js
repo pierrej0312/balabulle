@@ -22,3 +22,27 @@ window.addEventListener("scroll", ()=> {
         document.querySelector("header").classList.add("start");
     }
 });
+let heightPanel = window.innerHeight + 700;
+window.addEventListener("scroll", ()=> {
+  if(document.body.scrollTop > window.innerHeight && document.body.scrollTop < heightPanel || document.documentElement.scrollTop > window.innerHeight && document.documentElement.scrollTop < heightPanel) {
+    document.querySelector(".ham-button").classList.add("darkversion");
+  }
+  else{
+    document.querySelector(".ham-button.darkversion").classList.remove("darkversion");
+  }
+  /*if(document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+    document.querySelector(".ham-button").classList.add("darkversion");
+  }*/
+  /*if (document.body.scrollTop > heightPanel || document.documentElement.scrollTop > heightPanel) {
+    document.querySelector(".ham-button.darkversion").classList.remove("darkversion");
+  }*/
+  /*else if (document.body.scrollTop < window.innerHeight || document.documentElement.scrollTop < window.innerHeight) {
+    document.querySelector(".ham-button.darkversion").classList.remove("darkversion");
+  }*/
+})
+/*if (document.body.scrollTop < window.innerHeight || document.documentElement.scrollTop < window.innerHeight) {
+    document.querySelector(".ham-button.darkversion").classList.remove("darkversion");
+  }
+  else{
+    document.querySelector(".ham-button.darkversion").classList.remove("darkversion");
+  }*/

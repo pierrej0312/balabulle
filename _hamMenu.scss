@@ -62,7 +62,13 @@
         transform: translateY(-50%) rotate(-45deg);
     }
 }
-
+.ham-button.darkversion {
+    :nth-child(1),
+    :nth-child(2),
+    :nth-child(3) {
+        background-color: $txt-cta-bg;
+    }
+}
 
 
 .ham-button:hover > :nth-child(1),

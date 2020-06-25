@@ -1,0 +1,25 @@
+.panelContent.oppositeBg {
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%), url("data:image/svg+xml,%3Csvg width='1440' height='327' viewBox='0 0 1440 327' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M712 171C306 171 43.1667 274.667 -37.5 326.5V0H1459V326.5C1379.17 274.667 1118 171 712 171Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-size: 100% 100px,cover;
+    background-position-y: 0%, 100px;
+    background-position-x: left, center;
+    background-repeat: no-repeat;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    .productExplain {
+        width: 400px;
+        margin-left: 10vw;
+        margin-top: 150px;
+        margin-right:10vw;
+    }
+    .panelCelebrationAnime {
+        display: block;
+        position: relative;
+        width:600px;
+        height:350px;
+    }
+}
+.panelContent.annulatemargin {
+    margin-top: -150px;
+}
