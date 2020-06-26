@@ -23,3 +23,28 @@
 .panelContent.annulatemargin {
     margin-top: -150px;
 }
+section[class*="panelContent"]:nth-child(even):not(.oppositeBg) {
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+}
+section[class*="panelContent"]:nth-child(odd) {
+    display:flex;
+    flex-direction:row-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+}
+.panelContentIllustration {
+    display:block;
+    width:300px;
+    height:300px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+.productExplain {
+    width:500px;
+}
+    
