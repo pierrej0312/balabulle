@@ -541,6 +541,7 @@ main {
 main .main-descr {
   height: 100vh;
   width: 100vw;
+  max-width: 1800px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -554,6 +555,8 @@ main .main-descr {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (max-height: 570px) {
@@ -2116,6 +2119,256 @@ section[class*="panelContent"]:nth-child(odd) {
   padding: 8px 25px;
   border-radius: 70px;
   color: #A98042;
+}
+
+footer {
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 100px;
+  position: relative;
+}
+
+.newsletterandsocial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.newsletterandsocial::after {
+  display: none;
+  content: '';
+  width: 1px;
+  height: 100%;
+  background-color: black;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.newsletterandsocial .newsletter {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.newsletterandsocial .socialmedia {
+  width: 100%;
+  min-width: 200px;
+  display: block;
+  height: 150px;
+  background-color: black;
+}
+
+.countryandnav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-bottom: 0px;
+}
+
+.countryandnav .country {
+  width: 100%;
+}
+
+.countryandnav .secondnav {
+  width: 100%;
+}
+
+.countryandnav .secondnav .secondary-nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-left: 0px;
+  margin-top: 50px;
+}
+
+.countryandnav .secondnav .secondary-nav-list .nav-link {
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-bottom: 50px;
+}
+
+.footermenu {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.footermenu .footer-nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: 0;
+}
+
+.footermenu .footer-nav-list .nav-link {
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 12px;
+}
+
+@media screen and (min-width: 500px) {
+  footer {
+    width: 80vw;
+    max-width: 1400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+    position: relative;
+  }
+  .newsletterandsocial {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+  }
+  .newsletterandsocial .newsletter {
+    max-width: 600px;
+    width: auto;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-bottom: 0px;
+  }
+  .newsletterandsocial .socialmedia {
+    width: auto;
+    max-width: 600px;
+    min-width: 200px;
+    display: block;
+    height: 100px;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .countryandnav {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .countryandnav .country {
+    width: auto;
+  }
+  .countryandnav .secondnav {
+    width: 70%;
+    max-width: 900px;
+    margin-left: 50px;
+  }
+  .countryandnav .secondnav .secondary-nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding-left: 0;
+    margin-top: 0px;
+  }
+  .countryandnav .secondnav .secondary-nav-list .nav-link {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+  .countryandnav {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .newsletterandsocial::after {
+    display: block;
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: black;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 
 /*body {
