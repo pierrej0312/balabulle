@@ -2176,8 +2176,8 @@ main.animated .panelContent .productExplain h2 {
 
 main.animated .HeroContainer {
   width: 100vw;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2604,8 +2604,8 @@ main .panelContentIllustration {
 
 main .HeroContainer {
   width: 100vw;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
