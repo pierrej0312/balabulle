@@ -31,7 +31,9 @@
                 color:$txt-cta-bg;
             }
         }
-        .nav-link:hover {
+        .nav-link:hover,
+        .nav-link:focus,
+        .nav-link.active {
             a {
                 font-size:21px;
                 color:$CTA-color;

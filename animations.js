@@ -16,19 +16,19 @@ let more = document.querySelector(".more");
 
 window.addEventListener("scroll", ()=> {
     if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        document.querySelector("header").classList.remove("start");
+        document.querySelector("header.home").classList.remove("start");
       } 
     else {
-        document.querySelector("header").classList.add("start");
+        document.querySelector("header.home").classList.add("start");
     }
 });
 let heightPanel = window.innerHeight + 700;
 window.addEventListener("scroll", ()=> {
   if(document.body.scrollTop > window.innerHeight && document.body.scrollTop < heightPanel || document.documentElement.scrollTop > window.innerHeight && document.documentElement.scrollTop < heightPanel) {
-    document.querySelector(".ham-button").classList.add("darkversion");
+    document.querySelector(".ham-button.home").classList.add("darkversion");
   }
   else{
-    document.querySelector(".ham-button.darkversion").classList.remove("darkversion");
+    document.querySelector(".ham-button.home.darkversion").classList.remove("darkversion");
   }
   /*if(document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
     document.querySelector(".ham-button").classList.add("darkversion");

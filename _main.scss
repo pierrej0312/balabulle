@@ -1,4 +1,4 @@
-main {
+main.animated {
     background: url(/img/normal-ball.png), url(/img/big-ball.png), url(/img/small-ball.png), url(/img/tiny-ball.png),url(/img/normal-ball.png), url(/img/big-ball.png), radial-gradient(160.45% 57.32% at -24.34% 14.24%, #336099 0%, #50B0A2 100%);
     background-position-x: 60px, 5px, 1100px, 1200px, 1800px,2200px, 0;
     background-position-y: 50px,80vh, 30px, 70vh, 70vh,-10vh, 0;
@@ -19,4 +19,262 @@ main {
         color:$txt-basic-clr;
         z-index: 9999;
     }
+    @import 'panelContent';
+}
+main {
+    background:none;
+    section {
+        color:$txt-cta-bg;
+        }
+    .HeroContainer{
+        color:$txt-basic-clr;
+        }
+    .main-descr {
+        width: 80vw;
+        max-width: 1500px;
+        margin-top: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 200px;
+
+        .header-title {
+            font-family: Thinking_of_Betty;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            font-size: 2rem;
+            line-height: 180%;
+            margin-left: 0px;
+            }
+            strong {
+
+                font-weight: 500;
+                font-size: 2.5rem;
+                
+            }
+
+        }
+        ul {
+            padding-left: 0;
+        }
+    &::before {
+        content:'';
+        display: none;
+    }
+    .panelContent {
+        width:80vw;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        h2 {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            line-height: 180%;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        h3 {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            line-height: 180%;
+            font-size: 18px;
+            margin-bottom: 15px;
+            margin-top: 50px;
+        }
+        .panelContentIllustration.collecte {
+            background: url(/img/box.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .panelConsignesAnime {
+            width:300px;
+            height:300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 0px;
+            perspective-origin: 50% 50%;
+            animation-name: anim-perspective;
+                animation-duration: 7s;
+                animation-iteration-count: infinite;
+                animation-fill-mode: forwards;
+                animation-delay: 1s;
+                animation-timing-function: ease-in-out;
+                overflow: hidden;
+                transition: all 300ms ease-in-out;
+            .animContainer {
+                position: relative;
+                display: block;
+                width: 150px;
+                height: 150px;
+                border-radius: 100%;
+                border: 20px solid #FDC055;
+                background: radial-gradient(94.93% 94.93% at 69.68% 100%, #91887A 0%, rgba(209, 204, 194, 0) 100%);
+                background-attachment: fixed;
+                background-size: cover;
+                background-position-y: 0px;
+                animation-name: animated-consigne;
+                animation-duration: 7s;
+                animation-iteration-count: infinite;
+                animation-fill-mode: forwards;
+                animation-delay: 1s;
+                animation-timing-function: ease-in-out;
+                overflow: hidden;
+                transition: all 300ms ease-in-out;
+                transform: scale(1.0) scaleZ(1.0) rotateX(0deg);
+                .rotateBar {
+                    position: absolute;
+                    display: block;
+                    width:15px;
+                    height:60px;
+                    background-color: white;
+                    top:20px;
+                    left:40px;
+                    transform: rotate(40deg);
+                    transition: all 300ms ease-in-out;
+                    animation-name: animated-rotateBar;
+                    animation-duration: 7s;
+                    animation-iteration-count: infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 1s;
+                    animation-timing-function: ease-in-out;
+                }
+                .movingBlock {
+                    position: absolute;
+                    display: block;
+                    width:15px;
+                    height:100px;
+                    background-color: white;
+                    top:22px;
+                    left:62px;
+                    transition: all 300ms ease-in-out;
+                    animation-name: animated-block;
+                    animation-duration: 7s;
+                    animation-iteration-count: infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 1s;
+                    animation-timing-function: ease-in-out;
+                }
+                .euro {
+                    display: block;
+                    color:white;
+                    font-family: 'Open Sans', sans-serif;
+                    font-weight: 800;
+                    line-height: 180%;
+                    font-size: 23px;
+                    position: absolute;
+                    top: 37%;
+                    left:60%;
+                    transition: all 300ms ease-in-out;
+                    animation-name: animated-euro;
+                    animation-duration: 7s;
+                    animation-iteration-count: infinite;
+                    animation-fill-mode: forwards;
+                    animation-delay: 1s;
+                    animation-timing-function: ease-in-out;
+                }
+            }
+        }
+        
+        @media screen and (min-width: 900px) {
+            .panelContentIllustration.collecte {
+                margin-right: 0;
+                margin-left: 0;
+                width: 450px;
+                height:300px;
+            }
+        }
+    }
+    section[class*="panelContent"]:nth-child(even):not(.oppositeBg) {
+        display:flex;
+        flex-direction:column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+    section[class*="panelContent"]:nth-child(odd) {
+        display:flex;
+        flex-direction:column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+    .panelContentIllustration {
+        display:block;
+        width:200px;
+        height:200px;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-bottom: 50px;
+    }
+    @media screen and (min-width: 900px) {
+        section[class*="panelContent"]:nth-child(even):not(.oppositeBg) {
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 150px;
+        }
+        section[class*="panelContent"]:nth-child(odd) {
+            display:flex;
+            flex-direction:row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 150px;
+        }
+        section[class*="panelContent"].noImage {
+            justify-content: flex-start;
+        }
+        .panelContent {
+            .panelContentIllustration {
+                display:block;
+                width:300px;
+                height:300px;
+                margin-left: 10vw;
+                margin-right: 10vw;
+            }
+            .productExplain {
+                width:510px;
+            }
+        }
+    }
+    
+    .HeroContainer {
+        width: 100vw;
+        padding-top: 50px;
+        padding-bottom:50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(253, 192, 85, 0.8) 0%, rgba(253, 192, 85, 0.56) 100%), url(/img/hero-bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:center;
+        h2 {
+            font-family: Thinking_of_Betty;
+                font-weight: 500;
+                font-size: 3rem;
+                margin-bottom: 50px;
+                line-height: 180%;
+                text-align:center;
+        }
+        p {
+            width:300px;
+            font-size:20px;
+            text-align:center;
+            margin-bottom: 50px;
+            line-height: 150%;
+        }
+        .CTA {
+            background-color:white;
+            padding:8px 25px;
+            border-radius:70px;
+            color: #A98042;
+        }
+    }
+    
 }
