@@ -738,6 +738,28 @@
   }
 }
 
+@-webkit-keyframes header-coming {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes header-coming {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
 @font-face {
   font-family: 'Thinking_of_Betty';
   font-weight: 500;
@@ -851,6 +873,7 @@ html {
 }
 
 main.animated {
+  position: static;
   background: url(/img/normal-ball.png), url(/img/big-ball.png), url(/img/small-ball.png), url(/img/tiny-ball.png), url(/img/normal-ball.png), url(/img/big-ball.png), radial-gradient(160.45% 57.32% at -24.34% 14.24%, #336099 0%, #50B0A2 100%);
   background-position-x: 60px, 5px, 1100px, 1200px, 1800px,2200px, 0;
   background-position-y: 50px,80vh, 30px, 70vh, 70vh,-10vh, 0;
@@ -859,6 +882,8 @@ main.animated {
   background-attachment: fixed;
   position: relative;
   overflow: hidden;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
   -webkit-animation-name: animated-bubbles;
           animation-name: animated-bubbles;
   -webkit-animation-iteration-count: infinite;
@@ -925,6 +950,23 @@ main.animated .main-descr .header {
   margin-left: 10vw;
   margin-right: 10vw;
   z-index: 999;
+  -webkit-animation-name: header-coming;
+          animation-name: header-coming;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  opacity: 0;
+  -webkit-transform: translateX(-150px);
+          transform: translateX(-150px);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 main.animated .main-descr .header .header-title {
@@ -979,7 +1021,8 @@ main.animated .main-descr .header .CTA {
 
 main.animated .main-descr::before {
   content: '';
-  display: block;
+  display: none;
+  opacity: 1;
   width: 300px;
   height: 300px;
   margin-bottom: 50px;
@@ -989,6 +1032,8 @@ main.animated .main-descr::before {
   background-size: contain;
   background-position: center;
   z-index: 999;
+  -webkit-transition: all 700ms ease-in-out;
+  transition: all 700ms ease-in-out;
 }
 
 @media screen and (max-height: 570px) {
@@ -1079,6 +1124,10 @@ main.animated .main-descr::before {
 }
 
 main.animated .more {
+  display: block;
+  opacity: 1;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
   position: absolute;
   top: 90vh;
   left: 50vw;
@@ -2021,6 +2070,13 @@ main.animated .panelContentIllustration.bar {
   background-size: 80%;
 }
 
+main.animated .panelContent {
+  display: block;
+  opacity: 1;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
 main.animated .panelContent .productExplain {
   width: 80vw;
   margin-top: 30px;
@@ -2140,6 +2196,10 @@ main.animated .HeroContainer {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  display: block;
+  opacity: 1;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 main.animated .HeroContainer h2 {
@@ -2164,6 +2224,49 @@ main.animated .HeroContainer .CTA {
   padding: 8px 25px;
   border-radius: 70px;
   color: #A98042;
+}
+
+main.animated.inload {
+  background: none;
+}
+
+main.animated.inload .main-descr::before {
+  content: '';
+  display: block;
+  position: absolute;
+  opacity: 0;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 50px;
+  margin-top: -100px;
+  background: url(/img/cup-render.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 999;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+main.animated.inload .more {
+  display: none;
+  opacity: 0;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+main.animated.inload .panelContent {
+  display: none;
+  opacity: 0;
+}
+
+main.animated.inload .HeroContainer {
+  display: none;
+  opacity: 0;
+}
+
+main.animated.inload + footer {
+  opacity: 0;
 }
 
 main {
@@ -2550,6 +2653,8 @@ header {
   margin: 0;
   top: 0;
   left: 0;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 @media screen and (min-width: 900px) {
@@ -2858,6 +2963,9 @@ footer {
   margin-right: auto;
   padding-top: 100px;
   position: relative;
+  opacity: 1;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 .newsletterandsocial {

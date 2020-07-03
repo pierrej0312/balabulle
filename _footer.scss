@@ -6,6 +6,8 @@ footer {
     margin-right: auto;
     padding-top: 100px;
     position:relative;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
 }
 .newsletterandsocial {
     display: flex;

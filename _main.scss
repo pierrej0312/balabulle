@@ -1,4 +1,5 @@
 main.animated {
+    position: static;
     background: url(/img/normal-ball.png), url(/img/big-ball.png), url(/img/small-ball.png), url(/img/tiny-ball.png),url(/img/normal-ball.png), url(/img/big-ball.png), radial-gradient(160.45% 57.32% at -24.34% 14.24%, #336099 0%, #50B0A2 100%);
     background-position-x: 60px, 5px, 1100px, 1200px, 1800px,2200px, 0;
     background-position-y: 50px,80vh, 30px, 70vh, 70vh,-10vh, 0;
@@ -7,6 +8,7 @@ main.animated {
     background-attachment: fixed;
     position: relative;
     overflow: hidden;
+    transition: all 500ms ease-in-out;
     animation-name: animated-bubbles;
                 animation-iteration-count: infinite;
                 animation-fill-mode: forwards;
@@ -20,6 +22,43 @@ main.animated {
         z-index: 9999;
     }
     @import 'panelContent';
+}
+main.animated.inload {
+    .main-descr {
+        &::before {
+            content:'';
+            display: block;
+            position: absolute;
+            opacity:0;
+            width:300px;
+            height:300px;
+            margin-bottom: 50px;
+            margin-top: -100px;
+            background: url(/img/cup-render.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            z-index: 999;
+            transition: all 300ms ease-in-out;
+        }
+    }
+    .more {
+        display: none;
+        opacity: 0;
+        transition: all 300ms ease-in-out;
+    }
+    background: none;
+    .panelContent {
+        display:none;
+        opacity: 0;
+    }
+    .HeroContainer {
+        display:none;
+        opacity: 0;
+    }
+}
+main.animated.inload + footer {
+    opacity: 0;
 }
 main {
     background:none;

@@ -297,3 +297,12 @@
         opacity: 0;
     }
 }
+@keyframes header-coming {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+        transform: none;
+    }
+}

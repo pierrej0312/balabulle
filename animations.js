@@ -1,6 +1,11 @@
 let hamButton = document.querySelector(".ham-button");
 let nav = document.querySelector(".main-nav")
 let activityList
+//loading
+window.addEventListener("load", function() {
+  document.querySelector(".animated.inload").classList.remove("inload");
+});
+
 //ouvre nav
 hamButton.addEventListener("click", function() {
         hamButton.classList.toggle("active");
