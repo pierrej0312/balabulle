@@ -495,7 +495,7 @@
     -webkit-transform: scale(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateX(-20deg);
             transform: scale(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateX(-20deg);
   }
-  80% {
+  90% {
     border: 20px solid #C8C4BD;
     background: none;
     background-attachment: fixed;
@@ -546,7 +546,7 @@
     -webkit-transform: scale(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateX(-20deg);
             transform: scale(1) scaleZ(1) rotateX(0deg) rotateY(0deg) rotateX(-20deg);
   }
-  80% {
+  90% {
     border: 20px solid #C8C4BD;
     background: none;
     background-attachment: fixed;
@@ -591,7 +591,7 @@
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
   }
-  80% {
+  90% {
     width: 15px;
     height: 100%;
     width: 50px;
@@ -634,7 +634,7 @@
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
   }
-  80% {
+  90% {
     width: 15px;
     height: 100%;
     width: 50px;
@@ -668,7 +668,7 @@
     top: 50px;
     left: 0px;
   }
-  80% {
+  90% {
     top: 80%;
     width: 100%;
     height: 200px;
@@ -699,7 +699,7 @@
     top: 50px;
     left: 0px;
   }
-  80% {
+  90% {
     top: 80%;
     width: 100%;
     height: 200px;
@@ -718,7 +718,7 @@
   38% {
     opacity: 0;
   }
-  80% {
+  90% {
     opacity: 0;
   }
 }
@@ -733,7 +733,7 @@
   38% {
     opacity: 0;
   }
-  80% {
+  90% {
     opacity: 0;
   }
 }
@@ -2443,6 +2443,8 @@ main .panelContent .panelConsignesAnime .animContainer .rotateBar {
           animation-delay: 1s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 main .panelContent .panelConsignesAnime .animContainer .movingBlock {
@@ -2467,6 +2469,8 @@ main .panelContent .panelConsignesAnime .animContainer .movingBlock {
           animation-delay: 1s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 main .panelContent .panelConsignesAnime .animContainer .euro {
@@ -2493,6 +2497,8 @@ main .panelContent .panelConsignesAnime .animContainer .euro {
           animation-delay: 1s;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 @media screen and (min-width: 900px) {
