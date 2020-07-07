@@ -1,3 +1,21 @@
+<?php 
+if(isset($_POST['submit'])){
+    $to = "pierrej0312@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $name = $_POST['name'];
+    $subject = "DEVIS BALABULLE DE" . $name;
+    $subject2 = "Copie du message envoyé à pjdesign";
+    $message = $name . " a écrit:" . "\n\n" . $_POST['text'];
+    $message2 = "Voici la copie de votre message " . $name . "\n\n" . $_POST['text'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "message envoyé. Merci ! " . $name . ", Nous vous recontacterons dans les plus bref délais.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -10,7 +28,7 @@
     <title>Accueil - Balabulle</title>
 </head>
 <body>
-    <header class="start home">
+    <header>
         <div class="menu-nav">
         <!--logo principal-->
         <a href="index.html" class="main-logo"><!--position relative-->
@@ -47,7 +65,7 @@
                 </li>
                 -->
 
-                <li class="nav-link active">
+                <li class="nav-link">
                     <a href="index.html">Acceuil</a>
                 </li>
                 <li class="nav-link">
@@ -56,8 +74,8 @@
                 <li class="nav-link">
                     <a href="contact.html">Contact</a>
                 </li>
-                <li class="nav-link CTA">
-                    <a href="devis.php">Devis</a>
+                <li class="nav-link CTA active">
+                    <a href="">Devis</a>
                 </li>
             </ul>
         </nav>
@@ -66,98 +84,6 @@
         <!--Hamburger fin-->
     <!--header texte-->
 </header>
-<main class="animated inload">
-<section class="main-descr">
-    <div class="header">
-        <h2 class="header-title">
-            <strong>Gobelet</strong>
-            Réutilisable
-        </h2>
-        <p class="header-txt">Le gobelet Balabulle est l'article idéal lors de l'organisation de votre évènement ou festival. Plus écologique que le gobelet jetable, le gobelet  Balabulle en PVC est un article  festif qui marquera l'esprit de son utilisateur.</p>
-        <a href="devis.php" class="CTA">Demander un devis</a>
-    </div>
-    <a href="#FirstPanel" class="more"><p>Lire la suite</p> <div class="look-bottom"><span></span><span></span></div></a>
-</section>
-    <!--header texte fin-->
-
-<section class="panelContent oppositeBg" id="FirstPanel">
-    <section class="productExplain">
-        <h2>
-            Votre solution écologique
-        </h2>
-        <p>Des déchets de gobelets jetables ? Des verres cassés par les clients pendant vos festivités ?</p>
-        <p>Adoptez le gobelet BALABULLE aux matériaux durables et recyclables. Le gobelet BALABULLE émet 0 déchet qu’il soit utilisé ou cassé grâce au service nettoyage et recyclage.</p>
-    </section>
-    <aside class="panelCelebrationAnime" aria-hidden="true">
-        <span class="balloon3"></span>
-        <span class="balloon2"></span>
-        <span class="balloon1"></span>
-        <div class="character5">
-            <span class="armright"></span>
-            <span class="body"></span>
-            <span class="armleft"></span>
-            <span class="legright"></span>
-            <span class="legleft"></span>
-        </div>
-        <div class="character4">
-            <span class="body"></span>
-            <span class="legright"></span>
-            <span class="legleft"></span>
-            <span class="hair"></span>
-        </div>
-        <div class="character3">
-            <span class="body"></span>
-            <span class="hair"></span>
-            <span class="armleft"></span>
-            <span class="armright"></span>
-            <span class="legright"></span>
-            <span class="legleft"></span>
-        </div>
-        <div class="character2">
-            <span class="body"></span>
-            <span class="legright"></span>
-            <span class="legleft"></span>
-        </div>
-        <div class="character1">
-            <span class="body"></span>
-            <span class="legright"></span>
-            <span class="legleft"></span>
-            <span class="armleft"></span>
-        </div>
-        <span class="particle5"></span>
-        <span class="particle4"></span>
-        <span class="particle3"></span>
-        <span class="particle2"></span>
-        <span class="particle1"></span>
-        <span class="bg"></span>
-    </aside>
-</section>
-<section class="panelContent annulatemargin">
-    <div class="productExplain">
-        <h2>
-            Pour un look fun !
-        </h2>
-        <p>Démarquez-vous lors de votre événement avec un gobelet qui a du style.</p>
-    </div>
-    <div class="panelContentIllustration cup" aria-hidden="true"></div>
-</section>
-<section class="panelContent">
-    <div class="productExplain">
-        <h2>
-            Parfait pour vos événements
-        </h2>
-        <p>
-            Nous vous livrons vos gobelets propres pour votre événement et les reprenons à la fin. Vous vous occupez que de gérer les cautions et ne payez que le transport et le lavage.
-             Vous pouvez déjà disposer de nos gobelets à partir d’une commande minimale de 500 gobelets ?</p>
-    </div>
-    <div class="panelContentIllustration bar" ariahidden="true"></div>
-</section>
-<section class="HeroContainer">
-    <h2>Lancez vous !</h2>
-    <p>Obtenez vos gobelets BALABULLE en location ou achat pour un événement plus fun et écoresponsable</p>
-    <a href="devis.php" class="CTA">Demander un devis</a>
-</section>
-</main>
 <footer>
     <section class="newsletterandsocial">
     <section class="newsletter">
@@ -197,13 +123,13 @@
                     <a href="index.html">Home</a>
                 </li>
                 <li class="nav-link">
-                    <a href="decouvrir.html">Découvrir</a>
+                    <a href="contact.html">Découvrir</a>
                 </li>
                 <li class="nav-link">
                     <a href="contact.html">Contact</a>
                 </li>
                 <li class="nav-link CTA">
-                    <a href="devis.php">Devis</a>
+                    <a href="">Devis</a>
                 </li>
                 <li class="nav-link">
                     <a href="">FAQ</a>
