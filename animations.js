@@ -1,5 +1,5 @@
 let hamButton = document.querySelector(".ham-button");
-let nav = document.querySelector(".main-nav")
+let nav = document.querySelector(".main-nav");
 let activityList
 //loading
 window.addEventListener("load", function() {

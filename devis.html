@@ -1,4 +1,4 @@
-<?php 
+<!--<?php 
 if(isset($_POST['submit'])){
     $to = "pierrej0312@gmail.com"; // this is your Email address
     $from = $_POST['email']; // this is the sender's Email address
@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
     echo "message envoyé. Merci ! " . $name . ", Nous vous recontacterons dans les plus bref délais.";
     // You can also use header('Location: thank_you.php'); to redirect to another page.
     }
-?>
+?>-->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
         </a>
 
         <!--Hamburger-->
-        <div class="ham-button home" aria-hidden="true">
+        <div class="ham-button darkversion" aria-hidden="true">
             <span></span>
             <span></span>
             <span></span>
@@ -84,6 +84,154 @@ if(isset($_POST['submit'])){
         <!--Hamburger fin-->
     <!--header texte-->
 </header>
+<h2>Devis</h2>
+<span class="devis-bar-steps"></span>
+<ul class="info-suivi-devis">
+    <li class="devis-step step-1"><span></span><h4>Type de service</h4></li>
+    <li class="devis-step step-2"><span></span><h4>Quantités</h4></li>
+    <li class="devis-step step-3"><span></span><h4>Dates</h4></li>
+    <li class="devis-step step-4"><span></span><h4>Bonus</h4></li>
+    <li class="devis-step step-5"><span></span><h4>Coordonnées</h4></li>
+    <li class="devis-step step-6"><span></span><h4>Message</h4></li>
+    <li class="devis-step step-7"><span></span><h4>Récapitulatif</h4></li>
+</ul>
+<form action="/devis-form.php" method="post" id="devis-form" name="devis-form" class="devis-form">
+    <h3>J'ai besoin de gobelets en</h3>
+    <fieldset class="devis-fieldset type">
+        <label>Achat
+            <input type="radio" id="achat" name="device" value="achat">
+        </label>
+        
+        <label>Location
+            <input type="radio" id="location" name="device" value="location">
+        </label>
+    </fieldset>
+    <fieldset class="devis-fieldset quantity">
+        <h3>J'en prend</h3>
+        <div class="Quantity-animation" aria-hidden="true">
+            <div class="container-movement">
+                <span class="container-inside"></span>
+                <span class="boxes-1"></span>
+                <div class="cup-box">
+                    <span class="cup-box-inside"></span>
+                    <span class="cups-1"></span>
+                    <span class="theCup"></span>
+                    <span class="cups-2"></span>
+                    <span class="cup-box-outside"></span>
+                </div>
+                <span class="boxes-2"></span>
+                <span class="container-outside"></span>
+            </div>
+        </div>
+        <input type="range" id="CupQuantity" name="CupQuantity" max="2000" min="50" step="50" onchange="this.nextElementSibling.value=this.value">
+        <input type="number" name="AmountQuantity" min="50" max="2000" value="1000" onchange="this.previousElementSibling.value=this.value">
+    </fieldset>
+    <fieldset class="devis-fieldset dates">
+        <h3>Je choisis mes dates</h3>
+        <div class="begins">
+            <label for="datebegins">Du</label>
+            <input type ="date" name="datebegins" value="01/01/2016" id="begins">
+            <div id="begin-ans"></div>
+        </div>
+
+        <div class="end">
+            <label for="dateend">Au</label>
+            <input type ="date" name="dateend" value="01/01/2016" id="end">
+            <div id="end-ans"></div>
+        </div>
+        
+        <div class="Achat-date">
+            <label for="date">Le</label>
+            <input type ="date" name="date" value="01/01/2016" id="the">
+            <div id="the-ans"></div>
+        </div>
+
+    </fieldset>
+    <fieldset class="devis-fieldset bonus">
+        <h3>Et en bonus ?</h3>
+        <input type="checkbox" name="cleaning-device" id="nettoyage">
+        <label for="cleaning-device">
+            <span class="cleaning-illustration"></span>
+            <h4>Nettoyage</h4>
+            <p>Pour garder vos gobelets propres pendant la location ou à tout moment suite à l'achat</p>
+        </label>
+    </fieldset>
+    <fieldset class="devis-fieldset informations">
+        <h3>Mes coordonnées</h3>
+
+        <!--first name-->
+        <label for="firstName" class="required">Prénom</label>
+        <input type="text" name="FirstName" id="firstName" placeholder="Petite" class="input-contact" required>
+
+        <!--last name-->
+        <label for="lastName" class="required">Nom</label>
+        <input type="text" name="LastName" id="lastName" placeholder="Bulle" class="input-contact" required>
+
+        <!--Company-->
+        <label for="company">Société</label>
+        <input type="text" name="company" id="company" placeholder="" class="input-contact">
+
+        <!--email-->
+        <label for="email" class="required">Email</label>
+        <input type="email" name="email" id="email" placeholder="petite.bulle@mail.com" class="input-contact" required>
+
+        <!--Phone-->
+        <label for="phone" class="required">GSM / Fixe</label>
+        <input type="text" name="phone" id="phone" placeholder="" class="input-contact" required>
+    </fieldset>
+    <fieldset class="devis-fieldset message">
+        <!--message-->
+        <label for="message" class="required message-label">Message</label>
+        <textarea name="message" id="message" cols="40" rows="10" placeholder="Mon message" class="input-contact" required></textarea>
+    </fieldset>
+    <section class="devis-fieldset summary">
+        <h3>Résumé</h3>
+        <section class="device">
+            <h4>Type de devis</h4>
+            <p class="device-selected"></p>
+        </section>
+        <section class="quantity">
+            <h4>Quantités</h4>
+            <p class="quantity-selected"></p>
+        </section>
+        <section class="dates">
+            <h4>Dates</h4>
+            <p class="dates-begin-writed">Du :</p>
+            <p class="date-end-writed">Au :</p>
+            <p class="date-writed">Le :</p>
+        </section>
+        <section class="bonus">
+            <h4>Bonus</h4>
+            <p class="bonus-checked">Nettoyage</p>
+        </section>
+        <section class="personal-informations">
+            <h4>Coordonnées</h4>
+            <p class="firstname-writed">Prénom :</p>
+            <p class="lastname-writed">Nom :</p>
+            <p class="company-writed">Société :</p>
+            <p class="email-writed">Email :</p>
+            <p class="phone-writed">Téléphone :</p>
+        </section>
+        <section class="message">
+            <h3>Message</h3>
+            <p class="message-writed"></p>
+        </section>
+    </section>
+</form>
+<section class="form-buttons">
+    <input type="submit" form="devis-form" class="devis-button send">
+    <button class="devis-button next"></button>
+    <button class="devis-button previous">Précédent</button>
+</section>
+<section class="devis-form congratulations">
+    <div class="allright-bubble" aria-hidden="true">
+        <span class="V-bar-1"></span>
+        <span class="V-bar-2"></span>
+    </div>
+    <h3>Demande de devis envoyée</h3>
+    <h4>Nous vous répondrons dans les plus brefs délais</h4>
+    <a href="/index.html" class="CTA"> Retour sur Acceuil</a>
+</section>
 <footer>
     <section class="newsletterandsocial">
     <section class="newsletter">
