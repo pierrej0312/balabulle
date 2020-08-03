@@ -2809,6 +2809,12 @@ header .menu-nav .ham-button.darkversion :nth-child(3) {
   background-color: #336099;
 }
 
+header .menu-nav .ham-button.home.darkversion :nth-child(1),
+header .menu-nav .ham-button.home.darkversion :nth-child(2),
+header .menu-nav .ham-button.home.darkversion :nth-child(3) {
+  background-color: #336099;
+}
+
 header .menu-nav .ham-button:hover > :nth-child(1),
 header .menu-nav .ham-button:hover > :nth-child(2),
 header .menu-nav .ham-button:hover > :nth-child(3),
