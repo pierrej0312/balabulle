@@ -185,24 +185,36 @@
     }
 }
 .devis-form {
-    min-height:calc(100vh - 360px);
+    min-height:calc(100vh - 420px);
     width:100vw;
     max-width: 1500px;
     position: relative;
-    overflow-x: hidden;
     margin-right: auto;
     margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 
     .devis-fieldset {
-        position: absolute;
         width: 80%;
-        height: 100%;
+        min-height: 100%;
         top:0;
-        left:50%;
-        transform: translateX(-50%);
         padding:0;
         transition: all 300ms ease-in-out;
         display: none;
+
+        h3 {
+            text-align: center;
+            color:$txt-cta-bg;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            line-height: 180%;
+            font-size: 25px;
+            max-width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+        }
     }
     .devis-fieldset.left {
         opacity: 0;
@@ -249,7 +261,7 @@ label {
 ::-webkit-input-placeholder {
         opacity: 1;
         padding-left: 100px;
-        color: $txt-basic-clr;
+        color: $txt-cta-bg;
         transition: all 300ms ease-in-out;
 }
 textarea {
@@ -283,13 +295,14 @@ textarea {
 }
 .input-contact:focus::-webkit-input-placeholder {
     padding-left: 0px;
+    color: #50B0A2;
 }
 textarea:focus {
     border: 1px solid #50B0A2;
 }
 textarea:focus::-webkit-input-placeholder {
     padding-left: 0px;
-    color: #D9DADC;
+    color: #50B0A2;
 }
 .send-button::after {
     content:'';
@@ -349,4 +362,64 @@ label.texted {
     font-size: 13px;
     color: #50B0A2;
     transform: translateY(0px) translateX(0px);
+}
+.form-buttons {
+    width: 80vw;
+    max-width: 800px;
+    height:50px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+
+    .devis-button.next {
+        border: none;
+        padding:10px 30px;
+        border-radius: 70px;
+        background: #50B0A2;
+        color: white;
+        outline: none;
+        transition: all 300ms ease-in-out;
+        font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            line-height: 180%;
+            font-size: 12px;
+    }
+    .devis-button.previous {
+        font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            line-height: 180%;
+            font-size: 12px;
+        outline: none;
+        background: none;
+    }
+    @media screen and (min-width: 700px) {
+        .devis-button.next:hover {
+            box-shadow: 0px 0px 34px #50B0A2;
+        }
+    }
+    
+}
+.form-buttons.end {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    margin-bottom: 150px;
+    .devis-button.next {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        width:100%;
+        max-width: 400px;
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+}
+.devis-form.congratulations {
+    display: none;
 }

@@ -57,8 +57,10 @@ function showTab(n) {
   }
   if (n == (x.length - 1)) {
     document.querySelector(".devis-button.next").innerHTML = "Valider";
+    document.querySelector(".form-buttons").classList.add("end")
   } else {
     document.querySelector(".devis-button.next").innerHTML = "Suivant";
+    document.querySelector(".form-buttons").classList.remove("end")
   }
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n)
