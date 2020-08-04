@@ -39,6 +39,17 @@
                 color:$CTA-color;
             }
         }
+        .nav-link.CTA.active a {
+            color:$txt-cta-bg;
+        }
+        .nav-link.CTA.active:hover a,
+        .nav-link.CTA.active:focus a {
+            color:$txt-cta-bg;
+        }
+        .nav-link.CTA.active:hover,
+        .nav-link.CTA.active:focus {
+            background-color: $CTA-color;
+        }
         .CTA:hover {
             background-color:$txt-cta-bg;
             a{

@@ -24,8 +24,8 @@ if(isset($_POST['submit'])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css" />
     <meta name="name" content="Balabulle - gobelet réutilisable"/>
-    <meta name="description" content="Gobelet écologique pour votre événement ou festivité"/>
-    <title>Accueil - Balabulle</title>
+    <meta name="description" content="Demander un devis sur mesure - Gobelet écologique pour votre événement ou festivité"/>
+    <title>Devis - Balabulle</title>
 </head>
 <body>
     <header>
@@ -84,9 +84,9 @@ if(isset($_POST['submit'])){
         <!--Hamburger fin-->
     <!--header texte-->
 </header>
-<h2>Devis</h2>
-<span class="devis-bar-steps"></span>
+<h2 class="page-title">Devis</h2>
 <ul class="info-suivi-devis">
+    <span class="devis-bar-steps" aria-hidden="true"></span>
     <li class="devis-step step-1"><span></span><h4>Type de service</h4></li>
     <li class="devis-step step-2"><span></span><h4>Quantités</h4></li>
     <li class="devis-step step-3"><span></span><h4>Dates</h4></li>
@@ -96,8 +96,9 @@ if(isset($_POST['submit'])){
     <li class="devis-step step-7"><span></span><h4>Récapitulatif</h4></li>
 </ul>
 <form action="/devis-form.php" method="post" id="devis-form" name="devis-form" class="devis-form">
-    <h3>J'ai besoin de gobelets en</h3>
+    
     <fieldset class="devis-fieldset type">
+        <h3>J'ai besoin de gobelets en</h3>
         <label>Achat
             <input type="radio" id="achat" name="device" value="achat">
         </label>
@@ -130,19 +131,19 @@ if(isset($_POST['submit'])){
         <h3>Je choisis mes dates</h3>
         <div class="begins">
             <label for="datebegins">Du</label>
-            <input type ="date" name="datebegins" value="01/01/2016" id="begins">
+            <input type ="date" name="datebegins" value="2020-08-20" id="begins">
             <div id="begin-ans"></div>
         </div>
 
         <div class="end">
             <label for="dateend">Au</label>
-            <input type ="date" name="dateend" value="01/01/2016" id="end">
+            <input type ="date" name="dateend" value="2020-08-20" id="end">
             <div id="end-ans"></div>
         </div>
         
         <div class="Achat-date">
             <label for="date">Le</label>
-            <input type ="date" name="date" value="01/01/2016" id="the">
+            <input type ="date" name="date" value="2020-08-20" id="the">
             <div id="the-ans"></div>
         </div>
 
@@ -182,7 +183,7 @@ if(isset($_POST['submit'])){
     <fieldset class="devis-fieldset message">
         <!--message-->
         <label for="message" class="required message-label">Message</label>
-        <textarea name="message" id="message" cols="40" rows="10" placeholder="Mon message" class="input-contact" required></textarea>
+        <textarea name="message" id="message" cols="40" rows="10" placeholder="Mon message" class="input-message"></textarea>
     </fieldset>
     <section class="devis-fieldset summary">
         <h3>Résumé</h3>
@@ -219,9 +220,8 @@ if(isset($_POST['submit'])){
     </section>
 </form>
 <section class="form-buttons">
-    <input type="submit" form="devis-form" class="devis-button send">
-    <button class="devis-button next"></button>
-    <button class="devis-button previous">Précédent</button>
+    <button class="devis-button next" onclick="nextPrev(1)"></button>
+    <button class="devis-button previous" onclick="nextPrev(-1)">Précédent</button>
 </section>
 <section class="devis-form congratulations">
     <div class="allright-bubble" aria-hidden="true">
@@ -241,7 +241,7 @@ if(isset($_POST['submit'])){
         <h3>Toutes les news sur les gobelets et services par mail</h3></label>
             <input
                 type="email"
-                id="email"
+                id="email-newsletter"
                 placeholder="monemail@mail.com"
                 class="newsletter-input"
             />
