@@ -48,7 +48,10 @@ showTab(currentTab); // Display the current tab
 function showTab(n) {
   // This function will display the specified tab of the form ...
   var x = document.getElementsByClassName("devis-fieldset");
-  x[n].style.display = "block";
+  //x[n].style.display = "block";
+  x[n].classList.add('currentSlide');
+  x[n].classList.remove('left');
+  x[n].classList.remove('right');
   // ... and fix the Previous/Next buttons:
   if (n == 0) {
     document.querySelector(".devis-button.previous").style.display = "none";
@@ -62,9 +65,33 @@ function showTab(n) {
     document.querySelector(".devis-button.next").innerHTML = "Suivant";
     document.querySelector(".form-buttons").classList.remove("end")
   }
+  
+  /*let nextSlide() {
+    // current slide becomes hidden
+    x[currentTab].className = 'slide';
+    // set the current slide as the next one
+    currentTab = (currentTab + 1) % x.length;
+    // add the class showing to the slide to make it visible
+    x[currentSlide].className = 'slide showing';
+  }*/
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n)
 }
+
+/*function prevPrev(n) {
+  var x = document.getElementsByClassName("devis-fieldset");
+  if (n > 1 && n > x.length) {
+    x[currentTab].classList.add("right");
+    x[currentTab].classList.remove("currentSlide");
+    x[currentTab].classList.remove("left");
+    currentTab = currentTab + n;
+  }
+  else {
+    x[currentTab].classList.add("left");
+    x[currentTab].classList.remove("currentSlide");
+    currentTab = currentTab + n;
+  }
+}*/
 
 function nextPrev(n) {
   // This function will figure out which tab to display
@@ -72,7 +99,8 @@ function nextPrev(n) {
   // Exit the function if any field in the current tab is invalid:
   //if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
-  x[currentTab].style.display = "none";
+  x[currentTab].classList.add("left");
+  x[currentTab].classList.remove("currentSlide");
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
   // if you have reached the end of the form... :
@@ -123,7 +151,9 @@ function fixStepIndicator(n) {
 
 //formulaire type contact animation + disabled
 
-let input = document.querySelectorAll(".input-contact");
+
+
+let input = document.querySelectorAll(".devis-fieldset.informations .input-contact");
 
 
 input.forEach(element => {
@@ -181,6 +211,7 @@ input.forEach(element => {
         console.log(element.previousElementSibling)
         element.previousElementSibling.classList.add("texted")
     })
+    
    element.addEventListener("change", function() {
         if(element.value == ""){
             element.classList.remove("texted")
@@ -199,3 +230,48 @@ input.forEach(element => {
      else {}
    });
 });
+
+// radio take value
+
+/*const btn = document.querySelector('#btn');
+
+
+        // handle click button
+        btn.onclick = function () {
+            const rbs = document.querySelectorAll('input[name="choice"]');
+            let selectedValue;
+            for (const rb of rbs) {
+                if (rb.checked) {
+                    selectedValue = rb.value;
+                    break;
+                }
+            }
+            alert(selectedValue);
+        };*/
+
+
+// Range with input
+
+var myRange = document.querySelector('#CupQuantityRange');
+var myValue = document.querySelector('#cupQuantityNumber');
+var myUnits = 'myUnits';
+var off = myRange.offsetWidth / (myRange.max - myRange.min);
+var px =  ((myRange.value - myRange.min) * off);
+
+  myValue.style.left = px + 'px';
+  console.log("px" + px);
+  console.log("offsetwidth" + myRange.offsetWidth);
+  console.log("rangeMax" + myRange.max);
+  console.log("rangeMin" + myRange.min);
+  console.log("off" + off);
+  console.log("rangeValue" + myRange.value);
+  if (myRange.offsetWidth == 0) {
+    myRange.offsetWidth == 300;
+  }
+
+  myRange.oninput =function(){
+    let px = ((myRange.value - myRange.min) * off);
+    myValue.style.left = px + 'px';
+    console.log("px modified" + px);
+
+  };
