@@ -275,3 +275,47 @@ var px =  ((myRange.value - myRange.min) * off);
     console.log("px modified" + px);
 
   };
+  let QuantityAnimation = document.querySelector(".Quantity-animation");
+
+  myRange.addEventListener("change", function() {
+    var x = ((myRange.value - myRange.min) / (myRange.max - myRange.min) * 100 );
+    var color = 'linear-gradient(90deg, rgb(80, 176, 162)' + x + '%, rgb(248, 248, 248)' + x + '%)';
+    myRange.style.background = color;
+    if (myRange.value < 666) {
+      QuantityAnimation.classList.add("step1");
+      QuantityAnimation.classList.remove("step2");
+      QuantityAnimation.classList.remove("step3");
+    }
+    if (myRange.value > 666 && myRange.value < 1333) {
+      QuantityAnimation.classList.add("step2");
+      QuantityAnimation.classList.remove("step1");
+      QuantityAnimation.classList.remove("step3");
+    }
+    if (myRange.value > 1333) {
+      QuantityAnimation.classList.add("step3");
+      QuantityAnimation.classList.remove("step1");
+      QuantityAnimation.classList.remove("step2");
+    }
+  })
+
+  //input date min today
+
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+
+today = yyyy+'-'+mm+'-'+dd;
+
+document.querySelector(".dateInputBegin").setAttribute("min", today);
+document.querySelector(".dateInputEnd").setAttribute("min", today);
+document.querySelector(".dateInputDate").setAttribute("min", today);
+document.querySelector(".dateInputBegin").setAttribute("value", today);
+document.querySelector(".dateInputEnd").setAttribute("value", today);
+document.querySelector(".dateInputDate").setAttribute("value", today);
