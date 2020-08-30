@@ -1012,6 +1012,102 @@
   }
 }
 
+@-webkit-keyframes animated-congrat {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 5000px;
+    height: 5000px;
+  }
+}
+
+@keyframes animated-congrat {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 5000px;
+    height: 5000px;
+  }
+}
+
+@-webkit-keyframes animated-congrat-v {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0);
+            transform: rotate(0deg) scale(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(0.5);
+            transform: rotate(360deg) scale(0.5);
+  }
+}
+
+@keyframes animated-congrat-v {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0);
+            transform: rotate(0deg) scale(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(0.5);
+            transform: rotate(360deg) scale(0.5);
+  }
+}
+
+@-webkit-keyframes animated-congrat-text {
+  0% {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes animated-congrat-text {
+  0% {
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animated-congrat-CTA {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes animated-congrat-CTA {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
 @font-face {
   font-family: 'Thinking_of_Betty';
   font-weight: 500;
@@ -3908,6 +4004,7 @@ footer {
   background: #FFFFFF;
   -webkit-box-shadow: 4px 4px 10px rgba(51, 96, 153, 0.33);
           box-shadow: 4px 4px 10px rgba(51, 96, 153, 0.33);
+  margin-top: -3px;
 }
 
 .devis-form .devis-fieldset.quantity .form-conatiner .input-container #CupQuantityRange::-moz-range-thumb {
@@ -3918,6 +4015,7 @@ footer {
   border-radius: 100%;
   background: #FFFFFF;
   box-shadow: 4px 4px 10px rgba(51, 96, 153, 0.33);
+  margin-top: -3px;
 }
 
 .devis-form .devis-fieldset.quantity .form-conatiner .input-container #CupQuantityRange::-ms-thumb {
@@ -3928,6 +4026,7 @@ footer {
   border-radius: 100%;
   background: #FFFFFF;
   box-shadow: 4px 4px 10px rgba(51, 96, 153, 0.33);
+  margin-top: -3px;
 }
 
 .devis-form .devis-fieldset.quantity .form-conatiner .input-container #CupQuantityRange:focus {
@@ -4296,6 +4395,36 @@ footer {
           animation-timing-function: linear;
 }
 
+.devis-form .devis-fieldset.dates .dates-form.achat .begins {
+  display: none;
+}
+
+.devis-form .devis-fieldset.dates .dates-form.achat .end {
+  display: none;
+}
+
+.devis-form .devis-fieldset.dates .dates-form.achat .Achat-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.devis-form .devis-fieldset.dates .dates-form.location .begins {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.devis-form .devis-fieldset.dates .dates-form.location .end {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.devis-form .devis-fieldset.dates .dates-form.location .Achat-date {
+  display: none;
+}
+
 .devis-form .devis-fieldset.dates .form-conatiner {
   width: 100%;
   display: -webkit-box;
@@ -4312,6 +4441,7 @@ footer {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+  margin-top: 100px;
 }
 
 .devis-form .devis-fieldset.dates .form-conatiner div {
@@ -4354,6 +4484,8 @@ footer {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   background: #50B0A2;
+  color: white;
+  border: none;
 }
 
 @media screen and (min-width: 700px) {
@@ -4371,6 +4503,249 @@ footer {
   .devis-form .devis-fieldset.dates .form-conatiner div {
     width: 250px;
   }
+}
+
+.devis-form .devis-fieldset.bonus h3 {
+  margin-bottom: 20px;
+}
+
+.devis-form .devis-fieldset.bonus input {
+  position: absolute;
+  width: 70vw;
+  max-width: 550px;
+  height: 320px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 999;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  padding: 30px;
+}
+
+.devis-form .devis-fieldset.bonus label {
+  -webkit-transform: none;
+          transform: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 70vw;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #F3F3F3;
+  -webkit-box-shadow: -6px -3px 16px #FFFFFF, 15px 14px 76px rgba(71, 93, 108, 0.33);
+          box-shadow: -6px -3px 16px #FFFFFF, 15px 14px 76px rgba(71, 93, 108, 0.33);
+  border-radius: 50px;
+  padding: 30px;
+}
+
+.devis-form .devis-fieldset.bonus label .cleaning-illustration {
+  width: 80%;
+  height: 80px;
+  display: block;
+  background-image: url("data:image/svg+xml,%3Csvg width='538' height='281' viewBox='0 0 538 281' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect y='279' width='538' height='2' fill='%23336099'/%3E%3Crect x='26' y='203' width='434' height='32' rx='16' stroke='%23336099' stroke-width='2'/%3E%3Ccircle cx='42' cy='219' r='9' fill='%23336099'/%3E%3Ccircle cx='442' cy='219' r='9' fill='%23336099'/%3E%3Crect x='128' y='94' width='128' height='186' rx='9' fill='%23E5E5E5' stroke='%23336099' stroke-width='2'/%3E%3Crect x='244' y='94' width='128' height='186' rx='9' fill='%23E5E5E5' stroke='%23336099' stroke-width='2'/%3E%3Cpath d='M140 85H361C371.493 85 380 93.5066 380 104V125H121V104C121 93.5066 129.507 85 140 85Z' fill='%23E5E5E5' stroke='%23336099' stroke-width='2'/%3E%3Ccircle opacity='0.5' cx='119.5' cy='140.5' r='12.5' fill='white'/%3E%3Ccircle opacity='0.5' cx='94' cy='119' r='22' fill='white'/%3E%3Ccircle opacity='0.5' cx='120' cy='22' r='22' fill='white'/%3E%3Ccircle opacity='0.5' cx='393' cy='155' r='22' fill='white'/%3E%3Ccircle opacity='0.5' cx='393' cy='71' r='22' fill='white'/%3E%3Ccircle opacity='0.5' cx='458' cy='48' r='22' fill='white'/%3E%3Ccircle opacity='0.5' cx='98' cy='70' r='31' fill='white'/%3E%3Ccircle opacity='0.5' cx='402' cy='124' r='31' fill='white'/%3E%3Ccircle opacity='0.5' cx='427' cy='90' r='31' fill='white'/%3E%3Ccircle opacity='0.5' cx='71.5' cy='96.5' r='12.5' fill='white'/%3E%3Ccircle opacity='0.5' cx='66.5' cy='46.5' r='12.5' fill='white'/%3E%3Crect x='443' y='242' width='86' height='36' stroke='%23336099' stroke-width='2'/%3E%3Cpath d='M66.4147 201L64.0933 175H78.9067L76.5853 201H66.4147Z' fill='white' stroke='%23336099' stroke-width='2'/%3E%3Cpath d='M106.415 201L104.093 175H118.907L116.585 201H106.415Z' fill='white' stroke='%23336099' stroke-width='2'/%3E%3Cpath d='M396.415 201L394.093 175H408.907L406.585 201H396.415Z' fill='white' stroke='%23336099' stroke-width='2'/%3E%3Cpath d='M436.415 201L434.093 175H448.907L446.585 201H436.415Z' fill='white' stroke='%23336099' stroke-width='2'/%3E%3Cpath d='M466.419 225.107L488.649 211.425L495.261 224.681L470.959 234.208L466.419 225.107Z' fill='white' stroke='%23336099' stroke-width='2'/%3E%3C/svg%3E%0A");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+  /*.machina {
+                    position: relative;
+                    width: 40%;
+                    height: 190px;
+                    left: 19%;
+                    top:24%;
+                    display: block;
+                    animation-name: animated-machina;
+                    animation-iteration-count: infinite;
+                    animation-fill-mode: forwards;
+                    animation-duration: 3s;
+                    animation-delay: 0.2s;
+                    animation-timing-function: ease-in-out;
+                    z-index: 50;
+                    
+                    :nth-child(1) {
+                        width: 100%;
+                        height:50px;
+                        top:0;
+                        left:0;
+                        display: block;
+                        border: 2px solid $txt-cta-bg;
+                        border-radius: 40px 40px 0 0;
+                        background: #F3F3F3;
+                        position: absolute;
+                        z-index:50;
+                    }
+                    :nth-child(2),
+                    :nth-child(3) {
+                        width:50%;
+                        height: 180px;
+                        display: block;
+                        border: 2px solid $txt-cta-bg;
+                        border-radius: 20px;
+                        background: #F3F3F3;
+                        bottom: 0;
+                        position: absolute;
+                    }
+                    :nth-child(2) {
+                        left:5px;
+                    }
+                    :nth-child(3) {
+                        right:5px;
+                    }
+                }
+                .roller {
+                    position: absolute;
+                    display:flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    width:70%;
+                    height: 30px;
+                    top:67%;
+                    left:0;
+                    z-index:20;
+                    border: 2px solid $txt-cta-bg;
+                        border-radius: 70px;
+                        background: #F3F3F3;
+                    
+                    :nth-child(1),
+                    :nth-child(2) {
+                        width:20px;
+                        height: 20px;
+                        border-radius: 100%;
+                        background: $txt-cta-bg;
+                    }
+                }
+                .ground {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height:2px;
+                    background:$txt-cta-bg;
+                }*/
+}
+
+.devis-form .devis-fieldset.bonus label strong {
+  color: #336099;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  line-height: 150%;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.devis-form .devis-fieldset.bonus label p {
+  color: #336099;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+  font-size: 15px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.devis-form .devis-fieldset.bonus label .add-button {
+  padding: 10px 20px;
+  border: 1px solid #50B0A2;
+  border-radius: 50px;
+  text-align: center;
+  overflow: hidden;
+  width: 80%;
+  height: 20px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.devis-form .devis-fieldset.bonus label .add-button p {
+  color: #50B0A2;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.devis-form .devis-fieldset.bonus label .add-button :nth-child(2),
+.devis-form .devis-fieldset.bonus label .add-button :nth-child(3) {
+  position: absolute;
+  height: 2px;
+  background: #50B0A2;
+  top: 50%;
+  left: 50%;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.devis-form .devis-fieldset.bonus label .add-button :nth-child(2) {
+  -webkit-transform: translate(-12px, -11px) rotate(60deg) scaleX(0);
+          transform: translate(-12px, -11px) rotate(60deg) scaleX(0);
+  width: 22px;
+}
+
+.devis-form .devis-fieldset.bonus label .add-button :nth-child(3) {
+  -webkit-transform: translate(-1px, 8px) rotate(-60deg) scaleX(0);
+          transform: translate(-1px, 8px) rotate(-60deg) scaleX(0);
+  width: 40px;
+}
+
+.devis-form .devis-fieldset.bonus input:checked + label .add-button {
+  width: 10px;
+  height: 20px;
+}
+
+.devis-form .devis-fieldset.bonus input:checked + label .add-button p {
+  -webkit-transform: translateY(-200px);
+          transform: translateY(-200px);
+}
+
+.devis-form .devis-fieldset.bonus input:checked + label .add-button :nth-child(2) {
+  -webkit-transform: translate(-12px, -11px) rotate(60deg) scaleX(1);
+          transform: translate(-12px, -11px) rotate(60deg) scaleX(1);
+}
+
+.devis-form .devis-fieldset.bonus input:checked + label .add-button :nth-child(3) {
+  -webkit-transform: translate(-1px, 8px) rotate(-60deg) scaleX(1.5);
+          transform: translate(-1px, 8px) rotate(-60deg) scaleX(1.5);
+}
+
+.devis-form .devis-fieldset.summary section {
+  margin-bottom: 30px;
+}
+
+.devis-form .devis-fieldset.summary section h4 {
+  color: #336099;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  line-height: 180%;
+  font-size: 12px;
+}
+
+.devis-form .devis-fieldset.summary section p {
+  color: #336099;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 180%;
+  font-size: 15px;
 }
 
 label {
@@ -4729,11 +5104,12 @@ label.texted {
           align-items: center;
   position: relative;
   margin-bottom: 150px;
+  margin-top: -20px;
 }
 
 .form-buttons.end .devis-button.next {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 0;
   padding-right: 0;
   width: 100%;
@@ -4744,6 +5120,196 @@ label.texted {
 
 .devis-form.congratulations {
   display: none;
+}
+
+.devis-form.congratulations {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: none;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.devis-form.congratulations .congrat-effect {
+  display: block;
+  position: absolute;
+  z-index: 9995;
+  top: 50vh;
+  left: 50vw;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 0px;
+  height: 0px;
+  background-color: #F3F3F3;
+  border-radius: 100%;
+  -webkit-animation-name: animated-congrat;
+          animation-name: animated-congrat;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+}
+
+.devis-form.congratulations .allright-bubble {
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background: radial-gradient(160.45% 57.32% at -24.34% 14.24%, #336099 -50%, #50B0A2 100%);
+  z-index: 9999;
+  -webkit-transform: rotate(0deg) scale(0);
+          transform: rotate(0deg) scale(0);
+  overflow: hidden;
+  -webkit-animation-name: animated-congrat-v;
+          animation-name: animated-congrat-v;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-timing-function: cubic-bezier(0.87, 0.01, 0.58, 1.83);
+          animation-timing-function: cubic-bezier(0.87, 0.01, 0.58, 1.83);
+}
+
+.devis-form.congratulations .allright-bubble :nth-child(1),
+.devis-form.congratulations .allright-bubble :nth-child(2) {
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 10px;
+  background: #F3F3F3;
+  border-radius: 10px;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.devis-form.congratulations .allright-bubble :nth-child(1) {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+  bottom: 84px;
+  left: 25px;
+}
+
+.devis-form.congratulations .allright-bubble :nth-child(2) {
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
+  bottom: 127px;
+  right: -45px;
+  width: 200px;
+}
+
+.devis-form.congratulations h3 {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  opacity: 0;
+  z-index: 9999;
+  color: #336099;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  line-height: 180%;
+  font-size: 20px;
+  margin-bottom: 10px;
+  -webkit-animation-name: animated-congrat-text;
+          animation-name: animated-congrat-text;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-timing-function: cubic-bezier(0.87, 0.01, 0.58, 1.83);
+          animation-timing-function: cubic-bezier(0.87, 0.01, 0.58, 1.83);
+}
+
+.devis-form.congratulations h4 {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  opacity: 0;
+  z-index: 9999;
+  color: #336099;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
+  line-height: 180%;
+  font-size: 15px;
+  -webkit-animation-name: animated-congrat-text;
+          animation-name: animated-congrat-text;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-timing-function: cubic-bezier(0.87, 0.01, 0.58, 1.83);
+          animation-timing-function: cubic-bezier(0.87, 0.01, 0.58, 1.83);
+}
+
+.devis-form.congratulations .CTA {
+  margin-top: 50px;
+  z-index: 9999;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 70px;
+  background: #50B0A2;
+  color: white;
+  outline: none;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  line-height: 180%;
+  font-size: 12px;
+  -webkit-animation-name: animated-congrat-CTA;
+          animation-name: animated-congrat-CTA;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+  -webkit-animation-timing-function: cubic-bezier(0.87, 0.01, 0.58, 1.83);
+          animation-timing-function: cubic-bezier(0.87, 0.01, 0.58, 1.83);
+}
+
+@media screen and (min-width: 700px) {
+  .devis-form.congratulations .CTA:hover {
+    -webkit-box-shadow: 0px 0px 34px #50B0A2;
+            box-shadow: 0px 0px 34px #50B0A2;
+  }
 }
 
 /*body {

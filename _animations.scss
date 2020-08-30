@@ -406,3 +406,41 @@
         transform: translate(-50%, -50%) scale(0.3);
     }
 }
+@keyframes animated-congrat {
+    0%{
+        width: 0px;
+        height:0px;
+    }
+    100%{
+        width: 5000px;
+        height:5000px;
+    }
+}
+@keyframes animated-congrat-v {
+    0% {
+        transform: rotate(0deg) scale(0);
+    }
+    100% {
+        transform: rotate(360deg) scale(0.5);
+    }
+}
+@keyframes animated-congrat-text {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes animated-congrat-CTA {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

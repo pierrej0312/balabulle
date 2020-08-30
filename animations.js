@@ -132,7 +132,7 @@ function validateForm() {
   }
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
-    document.getElementsByClassName("devis-step")[currentTab].className += " checked";
+    document.getElementsByClassName("devis-step")[currentTab].className.add(" checked");
   }
   return valid; // return the valid status
 }
@@ -307,7 +307,7 @@ var yyyy = today.getFullYear();
  if(dd<10){
         dd='0'+dd
     } 
-    if(mm<10){
+  if(mm<10){
         mm='0'+mm
     } 
 
@@ -319,3 +319,85 @@ document.querySelector(".dateInputDate").setAttribute("min", today);
 document.querySelector(".dateInputBegin").setAttribute("value", today);
 document.querySelector(".dateInputEnd").setAttribute("value", today);
 document.querySelector(".dateInputDate").setAttribute("value", today);
+
+let radioAchat = document.querySelector('#achat');
+let radioLoc = document.querySelector('#location');
+let begins = document.querySelector('.begins');
+let end = document.querySelector('.end');
+let AchatDate = document.querySelector('.input-container');
+let rbs = document.querySelectorAll('input[name="device"]');
+
+function achatlocCheck() {
+  if (document.getElementById('location').checked) {
+    document.querySelector('.dates-form.achat').classList.remove('achat');
+    document.querySelector('.dates-form').classList.add('location');
+    document.querySelector('.date-writed').style = "display:none;";
+    document.querySelector('.dates-begin-writed').style = "display:block;";
+  document.querySelector('.date-end-writed').style = "display:block;";
+    document.querySelector('.device-selected').innerHTML = 'location';
+} 
+if (document.getElementById('achat').checked) {
+  document.querySelector('.dates-form.location').classList.remove('location');
+  document.querySelector('.dates-form').classList.add('achat');
+  document.querySelector('.dates-begin-writed').style = "display:none;";
+  document.querySelector('.date-end-writed').style = "display:none;";
+  document.querySelector('.date-writed').style = "display:block;";
+  document.querySelector('.device-selected').innerHTML = 'achat';
+}
+}
+
+//resultat formulaire js
+
+//quantité
+let quantityInput = document.querySelector('input[name="CupQuantity"]');
+let quantity = document.querySelector('.quantity-selected') ;
+quantityInput.addEventListener('change', ev => {
+  quantity.innerHTML = quantityInput.value
+});
+//dates
+let dateBeginWrited = document.querySelector('.dates-begin-writed');
+let dateEndWrited = document.querySelector('.date-end-writed');
+let theDateWrited = document.querySelector('.date-writed');
+let dateBeginInput = document.querySelector('.dateInputBegin');
+let dateEndInput = document.querySelector('.dateInputEnd');
+let theDateInput = document.querySelector('.dateInputDate');
+theDateInput.addEventListener('change', function() {
+  theDateWrited.innerHTML = "Le" + " " + theDateInput.value
+});
+dateBeginInput.addEventListener('change', function() {
+  dateBeginWrited.innerHTML = "Du" + " " + dateBeginInput.value
+});
+dateEndInput.addEventListener('change', function() {
+  dateEndWrited.innerHTML = "Au" + " " + dateEndInput.value
+});
+//Bonus Nettoyage
+let NetInput = document.querySelector('#nettoyage')
+let ResumeNet = document.querySelector('.bonus-checked')
+
+function NetWrited () {
+  if (NetInput.checked = true) {
+    ResumeNet.innerHTML = "Nettoyage";
+  }
+  else {
+    ResumeNet.innerHTML = "aucun";
+  }
+}
+
+let firstName = document.querySelector('.firstname-writed')
+function FirstNameoutput() {
+  firstName.innerHTML = " " + document.querySelector('#firstName').value
+}
+let lastName = document.querySelector('.lastname-writed')
+function LastNameoutput() {
+  lastName.innerHTML = " " + document.querySelector('#lastName').value
+}
+let Company = document.querySelector('.company-writed')
+function Companyoutput() {
+  Company.innerHTML = " " + document.querySelector('#company').value
+}
+function Emailoutput() {
+  document.querySelector('.email-writed').innerHTML = " " + document.querySelector('#email').value
+}
+function Phoneoutput() {
+  document.querySelector('.phone-writed').innerHTML = " " + document.querySelector('#phone').value
+}
