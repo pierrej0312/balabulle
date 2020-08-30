@@ -185,7 +185,7 @@
     }
 }
 .devis-form {
-    min-height:calc(100vh - 350px);
+    height:calc(100vh - 350px);
     width:100vw;
     max-width: 1500px;
     position: relative;
@@ -934,6 +934,8 @@
         }
     }
     .devis-fieldset.summary {
+        position: relative;
+        width: 100%;
         section {
             margin-bottom: 30px;
             h4 {
@@ -951,7 +953,59 @@
                     font-size: 15px;
             }
         }
+        
+            .form-buttons-summary {
+                width: 100%;
+                height:50px;
+                display: flex;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                position: relative;
+            
+                .devis-button.submit {
+                    border: none;
+                    border-radius: 70px;
+                    background: #50B0A2;
+                    color: white;
+                    outline: none;
+                    transition: all 300ms ease-in-out;
+                    font-family: 'Open Sans', sans-serif;
+                        font-weight: 700;
+                        line-height: 180%;
+                        font-size: 12px;
+                        padding-top: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 0;
+                    padding-right: 0;
+                    width: 80%;
+                    max-width: 400px;
+                    font-size: 15px;
+                    margin-bottom: 30px;
+                }
+                .devis-button.previous {
+                    font-family: 'Open Sans', sans-serif;
+                        font-weight: 600;
+                        line-height: 180%;
+                        font-size: 12px;
+                    outline: none;
+                    background: none;
+                }
+                @media screen and (min-width: 700px) {
+                    .devis-button.submit:hover {
+                        box-shadow: 0px 0px 34px #50B0A2;
+                    }
+                }
+                
+            }
+        
     }
+}
+.devis-form.end {
+    height: calc(100vh - 100px);
 }
 
 
@@ -1208,6 +1262,7 @@ label.texted {
     
 }
 .form-buttons.end {
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -1224,144 +1279,4 @@ label.texted {
         font-size: 15px;
         margin-bottom: 30px;
     }
-}
-.devis-form.congratulations {
-    display: none;
-}
-.devis-form.congratulations {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    max-width: none;
-    height: 100vh;
-    margin:0;
-    padding:0;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    
-    
-    .congrat-effect {
-        display: block;
-        position: absolute;
-        z-index: 9995;
-        top: 50vh;
-        left: 50vw;
-        transform: translate(-50%, -50%);
-        width:0px;
-        height: 0px;
-        background-color: #F3F3F3;
-        border-radius: 100%;
-        animation-name: animated-congrat;
-                    animation-iteration-count: 1;
-                    animation-fill-mode: forwards;
-                    animation-duration: 1s;
-                    animation-delay: 0.3s;
-                    animation-timing-function: ease-in-out;
-    }
-    .allright-bubble {
-        display: block;
-        position: relative;
-        width: 200px;
-        height: 200px;
-        border-radius: 100%;
-        background: radial-gradient(160.45% 57.32% at -24.34% 14.24%, #336099 -50%, #50B0A2 100%);
-        z-index: 9999;
-        transform: rotate(0deg) scale(0);
-        overflow: hidden;
-        animation-name: animated-congrat-v;
-                    animation-iteration-count: 1;
-                    animation-fill-mode: forwards;
-                    animation-duration: 0.5s;
-                    animation-delay: 0.5s;
-                    animation-timing-function: cubic-bezier(.87,.01,.58,1.83);
-        
-        :nth-child(1),
-        :nth-child(2) {
-            display: block;
-            position: absolute;
-            width: 100px;
-            height:10px;
-            background:#F3F3F3;
-            border-radius: 10px;
-            transform-origin: center;
-        }
-        :nth-child(1) {
-            transform: rotate(60deg);
-            bottom:84px;
-            left: 25px;
-        }
-        :nth-child(2) {
-            transform: rotate(-60deg);
-            bottom:127px;
-            right: -45px;
-            width:200px;
-        }
-    }
-    h3 {
-        transform: translateY(-100px);
-        opacity: 0;
-        z-index: 9999;
-        color:$txt-cta-bg;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 700;
-            line-height: 180%;
-            font-size: 20px;
-            margin-bottom: 10px;
-            animation-name: animated-congrat-text;
-                    animation-iteration-count: 1;
-                    animation-fill-mode: forwards;
-                    animation-duration: 0.3s;
-                    animation-delay: 0.8s;
-                    animation-timing-function: cubic-bezier(.87,.01,.58,1.83);
-    }
-    h4 {
-        transform: translateY(-100px);
-        opacity: 0;
-        z-index: 9999;
-        color:$txt-cta-bg;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 500;
-            line-height: 180%;
-            font-size: 15px;
-            animation-name: animated-congrat-text;
-                    animation-iteration-count: 1;
-                    animation-fill-mode: forwards;
-                    animation-duration: 0.3s;
-                    animation-delay: 1s;
-                    animation-timing-function: cubic-bezier(.87,.01,.58,1.83);
-    }
-    .CTA {
-        margin-top: 50px;
-        z-index: 9999;
-        border: none;
-        padding:10px 30px;
-        border-radius: 70px;
-        background: #50B0A2;
-        color: white;
-        outline: none;
-        transition: all 300ms ease-in-out;
-        transform: scale(0);
-        opacity: 0;
-        font-family: 'Open Sans', sans-serif;
-            font-weight: 700;
-            line-height: 180%;
-            font-size: 12px;
-            animation-name: animated-congrat-CTA;
-                    animation-iteration-count: 1;
-                    animation-fill-mode: forwards;
-                    animation-duration: 0.3s;
-                    animation-delay: 1.2s;
-                    animation-timing-function: cubic-bezier(.87,.01,.58,1.83);
-    }
-    @media screen and (min-width: 700px) {
-        .CTA:hover {
-            box-shadow: 0px 0px 34px #50B0A2;
-        }
-    }
-    
 }

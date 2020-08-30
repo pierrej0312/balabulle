@@ -3787,7 +3787,7 @@ footer {
 }
 
 .devis-form {
-  min-height: calc(100vh - 350px);
+  height: calc(100vh - 350px);
   width: 100vw;
   max-width: 1500px;
   position: relative;
@@ -4728,6 +4728,11 @@ footer {
           transform: translate(-1px, 8px) rotate(-60deg) scaleX(1.5);
 }
 
+.devis-form .devis-fieldset.summary {
+  position: relative;
+  width: 100%;
+}
+
 .devis-form .devis-fieldset.summary section {
   margin-bottom: 30px;
 }
@@ -4746,6 +4751,70 @@ footer {
   font-weight: 400;
   line-height: 180%;
   font-size: 15px;
+}
+
+.devis-form .devis-fieldset.summary .form-buttons-summary {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.devis-form .devis-fieldset.summary .form-buttons-summary .devis-button.submit {
+  border: none;
+  border-radius: 70px;
+  background: #50B0A2;
+  color: white;
+  outline: none;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  line-height: 180%;
+  font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 80%;
+  max-width: 400px;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.devis-form .devis-fieldset.summary .form-buttons-summary .devis-button.previous {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  line-height: 180%;
+  font-size: 12px;
+  outline: none;
+  background: none;
+}
+
+@media screen and (min-width: 700px) {
+  .devis-form .devis-fieldset.summary .form-buttons-summary .devis-button.submit:hover {
+    -webkit-box-shadow: 0px 0px 34px #50B0A2;
+            box-shadow: 0px 0px 34px #50B0A2;
+  }
+}
+
+.devis-form.end {
+  height: calc(100vh - 100px);
 }
 
 label {
@@ -5092,6 +5161,7 @@ label.texted {
 }
 
 .form-buttons.end {
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -5118,12 +5188,14 @@ label.texted {
   margin-bottom: 30px;
 }
 
+/*body {
+    font-family: Thinking_of_Betty;
+    font-weight: 500;
+}*/
 .devis-form.congratulations {
-  display: none;
-}
-
-.devis-form.congratulations {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -5311,9 +5383,4 @@ label.texted {
             box-shadow: 0px 0px 34px #50B0A2;
   }
 }
-
-/*body {
-    font-family: Thinking_of_Betty;
-    font-weight: 500;
-}*/
 /*# sourceMappingURL=style.css.map */

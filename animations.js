@@ -60,10 +60,12 @@ function showTab(n) {
   }
   if (n == (x.length - 1)) {
     document.querySelector(".devis-button.next").innerHTML = "Valider";
-    document.querySelector(".form-buttons").classList.add("end")
+    document.querySelector(".form-buttons").classList.add("end");
+    document.querySelector("#devis-form").classList.add("end");
   } else {
     document.querySelector(".devis-button.next").innerHTML = "Suivant";
-    document.querySelector(".form-buttons").classList.remove("end")
+    document.querySelector(".form-buttons").classList.remove("end");
+    document.querySelector("#devis-form").classList.remove("end");
   }
   
   /*let nextSlide() {
@@ -104,11 +106,11 @@ function nextPrev(n) {
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
   // if you have reached the end of the form... :
-  if (currentTab >= x.length) {
+  /*if (currentTab >= x.length) {
     //...the form gets submitted:
     document.getElementById("devis-form").submit();
     return false;
-  }
+  }*/
   // Otherwise, display the correct tab:
   showTab(currentTab);
 }
@@ -153,7 +155,7 @@ function fixStepIndicator(n) {
 
 
 
-let input = document.querySelectorAll(".devis-fieldset.informations .input-contact");
+let input = document.querySelectorAll(".input-contact");
 
 
 input.forEach(element => {
@@ -221,14 +223,14 @@ input.forEach(element => {
             element.classList.add("texted")
         }
    });
-   element.addEventListener("change", function () {
+   /*element.addEventListener("change", function () {
     let expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/ //pattern
 
      if(element.type == 'email' || !expressionReguliere.test(theField.value)) {
       element.classList.add("false")
      }
      else {}
-   });
+   });*/
 });
 
 // radio take value
@@ -400,4 +402,7 @@ function Emailoutput() {
 }
 function Phoneoutput() {
   document.querySelector('.phone-writed').innerHTML = " " + document.querySelector('#phone').value
+}
+function Messageoutput() {
+  document.querySelector('.message-writed').innerHTML = " " + document.querySelector('#message').value
 }
